@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NpmDtsPlugin = require('npm-dts-webpack-plugin');
 const { DefinePlugin, IgnorePlugin } = require('webpack');
 const process = require('process');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const commitHash = require('child_process')
   .execSync('git rev-parse --short=8 HEAD')
   .toString()
@@ -173,8 +173,17 @@ module.exports = {
     ],
   },
   plugins: [
+
     new HtmlWebpackPlugin({ template: 'index.html.ejs' }),
     new HtmlWebpackPlugin({ filename: 'login.html' }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolve(__dirname, '../../node_modules/kipr-scratch'),
+          to: 'scratch',
+        },
+      ],
+    }),
     new DefinePlugin({
       IDE_VERSION: JSON.stringify(require('../../package.json').version),
       IDE_GIT_HASH: JSON.stringify(commitHash),
@@ -185,6 +194,7 @@ module.exports = {
         libkiprCCCommonDocumentation,
       ),
       IDE_I18N: JSON.stringify(i18n),
+      DEMO_MODE: JSON.stringify(process.env.DEMO_MODE === 'true'),
     }),
     new NpmDtsPlugin({
       root: resolve(__dirname, '../../'),

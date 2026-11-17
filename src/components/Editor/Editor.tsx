@@ -397,9 +397,9 @@ class Editor extends React.PureComponent<Props, State> {
     };
   }
 
-  async componentDidMount() {
-    this.monaco = await import('monaco-editor');
-  }
+  // async componentDidMount() {
+  //   this.monaco = await import('monaco-editor');
+  // }
   setupCodeEditor_ = (editor: any) => {
     if (!this.monaco) {
       return;
@@ -513,6 +513,7 @@ class Editor extends React.PureComponent<Props, State> {
           autocomplete={autocomplete}
           theme={theme.themeName}
           editable={true}
+          
         />
         </Suspense>
       );

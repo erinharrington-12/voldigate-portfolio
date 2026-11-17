@@ -18,8 +18,6 @@ export const createConsoleBarComponents = (
   compileStatus?: 'idle' | 'compiling' | 'success' | 'warning' | 'error',
 ) => {
   const consoleBar: BarComponent<object>[] = [];
-
-  console.log("createConsoleBarComponents compileStatus:", compileStatus);
   consoleBar.push(
     BarComponent.create(
       Button,
@@ -62,8 +60,7 @@ export class Console extends React.PureComponent<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    console.log("Console compDidUpdate prevProps:", prevProps);
-    console.log("Console compDidUpdate this.props:", this.props);
+
     if(prevProps.theme !== this.props.theme){
       this.setState({
                theme: this.props.theme,

@@ -96,18 +96,17 @@ const Logo = styled('img', (props: ThemeProps & { disabled?: boolean; onClick?: 
 }));
 
 const ExtraMenuContainer = styled('div', (props: ThemeProps) => ({
-  marginRight: '5px',
   color: props.theme.color,
-  top: '20px',
   width: '20%',
-  //height: '7vh',
-  lineHeight: '28px',
+
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'stretch',
   justifyContent: 'flex-end',
   flexDirection: 'row',
-  zIndex: 1,
 
+  alignSelf: 'stretch',
+
+  zIndex: 1,
 }));
 
 class MainMenu extends React.Component<Props, MenuState> {
@@ -123,7 +122,7 @@ class MainMenu extends React.Component<Props, MenuState> {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
-    console.log("Main Menu componentDidMount state:", this.state);
+
   }
 
   componentWillUnmount(): void {
@@ -131,8 +130,6 @@ class MainMenu extends React.Component<Props, MenuState> {
   }
 
   private handleResize = () => {
-    console.log("MainMenu handleResize called, window.innerWidth:", window.innerWidth);
-    console.log("MainMenu handleResize state before update:", this.state);
     const isMobileNow = window.innerWidth < 1030;
     if (this.state.isMobile !== isMobileNow) {
       this.setState({

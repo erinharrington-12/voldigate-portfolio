@@ -167,8 +167,7 @@ class MoveUserToClassroomDialog extends React.PureComponent<Props, State> {
 
   CLASS_OPTIONS: ComboBox.Option[] = (() => {
     const ret: ComboBox.Option[] = [];
-    console.log("MoveUserToClassroomDialog CLASS_OPTIONS props.classrooms:", this.props.classrooms);
-    console.log("MoveUserToClassroomDialog CLASS_OPTIONS props.toMoveUser:", this.props.toMoveUser);
+
     const classroomsArray = Object.values(this.props.classrooms);
     for (const classroom of classroomsArray) {
       const classroomName = LocalizedString.lookup(tr(`${classroom.name}`), this.props.locale);
@@ -186,8 +185,6 @@ class MoveUserToClassroomDialog extends React.PureComponent<Props, State> {
 
 
   private onClassroomSelect_ = (index: number, option: ComboBox.Option) => {
-    console.log("MoveUserToClassroomDialog onClassroomSelect_ props:", this.props);
-    console.log("MoveUserToClassroomDialog onClassroomSelect_ option:", option);
     this.setState({
       selectedClassroom: option.data as Classroom,
     });

@@ -438,8 +438,7 @@ class OpenFileDialog extends React.PureComponent<Props, State> {
     const { props, state } = this;
     const { style, className, theme, onClose, locale } = props;
     const { selectedUser, users } = state;
-    console.log('OpenFileDialog render props: ', props);
-    console.log('OpenFileDialog render state: ', state);
+ 
 
     let logo: JSX.Element;
 

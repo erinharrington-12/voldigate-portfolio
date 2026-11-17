@@ -8,7 +8,8 @@ import { BrowserRouter } from 'react-router-dom';
 import store from 'ivygate/dist/src/state';
 import { createRoot } from 'react-dom/client';
 import SpinnerLoader from './components/SpinnerLoader';
-
+import 'monaco-editor/esm/vs/editor/contrib/format/browser/formatActions';
+import 'monaco-editor/esm/vs/editor/contrib/indentation/browser/indentation';
 const App = React.lazy(() => import('./App'));
 
 if (process.env.NODE_ENV !== 'production') {

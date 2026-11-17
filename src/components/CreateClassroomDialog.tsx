@@ -16,6 +16,8 @@ import { Fa } from './Fa';
 import { User } from '../types/userTypes';
 import ComboBox from './ComboBox';
 import { InterfaceMode } from '../types/interfaceModes';
+import { isDemoMode } from '../demo/demoMode';
+import { createDemoClassroom } from '../demo/demoWorkspace';
 
 export interface CreateClassroomDialogPublicProps extends ThemeProps, StyleProps {
     showRepeatUserDialog: boolean;
@@ -105,41 +107,46 @@ export class CreateClassroomDialog extends React.PureComponent<Props, State> {
         });
     };
 
-onFinalize_ = async (values: { [id: string]: string }) => {
-  const classroomName = values.classroomName;
+    onFinalize_ = async (values: { [id: string]: string }) => {
+        const classroomName = values.classroomName;
 
-  const specialCharRegex = /[^a-zA-Z0-9 _-]/; // Removed space from allowed chars
+        const specialCharRegex = /[^a-zA-Z0-9 _-]/; // Removed space from allowed chars
 
-  // Check if classroom name exceeds 50 characters
-  if (classroomName.length > 50) {
-    this.setState({ errorMessage: 'Classroom name cannot exceed 50 characters.' });
-    return;
-  }
-  if (specialCharRegex.test(classroomName)) {
-    this.setState({ errorMessage: 'Classroom name contains special characters. Please use only letters, numbers, underscores, and hyphens.' });
-    return;
-  }
-  if (classroomName.trim() === '') {
-    this.setState({ errorMessage: 'Classroom name cannot be empty!' });
-    return;
-  }
+        // Check if classroom name exceeds 50 characters
+        if (classroomName.length > 50) {
+            this.setState({ errorMessage: 'Classroom name cannot exceed 50 characters.' });
+            return;
+        }
+        if (specialCharRegex.test(classroomName)) {
+            this.setState({ errorMessage: 'Classroom name contains special characters. Please use only letters, numbers, underscores, and hyphens.' });
+            return;
+        }
+        if (classroomName.trim() === '') {
+            this.setState({ errorMessage: 'Classroom name cannot be empty!' });
+            return;
+        }
 
-  this.setState({ errorMessage: '' }); // Clear error message if input is valid
+        this.setState({ errorMessage: '' }); // Clear error message if input is valid
 
-  try {
-    const response = await axios.post('/create-classroom', {  classroomName: `${classroomName}` });
-    console.log('Create classroom response:', response.data);
-    if (response.status === 200) {
-      this.props.onCloseClassroomDialog(classroomName);
-    }
-  } catch (error) {
-     if(error.response.status === 400 && error.response.data.error === 'Classroom already exists') {
-      this.setState({ errorMessage: 'Classroom already exists. Please choose a different name.' });
-      return;
+        try {
+            if (isDemoMode) {
+                createDemoClassroom(classroomName);
+                this.props.onCloseClassroomDialog(classroomName);
+            }   
+            else {
+                const response = await axios.post('/create-classroom', { classroomName: `${classroomName}` });
+                if (response.status === 200) {
+                    this.props.onCloseClassroomDialog(classroomName);
+                }
+            }
+        } catch (error) {
+            if (error.response.status === 400 && error.response.data.error === 'Classroom already exists') {
+                this.setState({ errorMessage: 'Classroom already exists. Please choose a different name.' });
+                return;
 
-    }
-  }
-};
+            }
+        }
+    };
 
 
     public myComponent(props: CreateClassroomDialogPublicProps) {
@@ -155,7 +162,7 @@ onFinalize_ = async (values: { [id: string]: string }) => {
         const CREATEUSER_FORM_ITEMS: Form.Item[] = [
             Form.username('classroomName', LocalizedString.lookup(tr('Classroom Name'), locale))
         ];
-        
+
         return (
             <div>
                 {!showRepeatUserDialog && (
@@ -175,7 +182,7 @@ onFinalize_ = async (values: { [id: string]: string }) => {
 
                                 </ErrorMessageContainer>
                             )}
-                
+
                             <StyledForm
                                 theme={theme}
                                 onFinalize={this.onFinalize_}
@@ -202,7 +209,7 @@ export default connect((state: ReduxState) => ({
     locale: state.i18n.locale
 }), dispatch => ({
     onLocaleChange: (locale: LocalizedString.Language) => dispatch(I18nAction.setLocale({ locale })),
- 
+
 }))(CreateClassroomDialog) as React.ComponentType<CreateClassroomDialogPublicProps>;
 
 

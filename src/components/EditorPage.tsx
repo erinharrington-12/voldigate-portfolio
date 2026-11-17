@@ -17,6 +17,9 @@ import { Modal } from '../pages/Modal';
 import { JSX } from 'react';
 import { faFloppyDisk, faLink, faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 import { Fa } from './Fa';
+import { isDemoMode } from '../demo/demoMode';
+import format from 'ivygate/dist/src/c-indent';
+import { loadDemoWorkspaceFile } from '../demo/demoFileStorage';
 
 
 export interface EditorPageProps extends LayoutProps, ThemeProps {
@@ -244,8 +247,6 @@ export class EditorPage extends React.PureComponent<Props & ReduxEditorPageProps
 
 
   async componentDidUpdate(prevProps: Props, prevState: State) {
-    console.log("EditorPage compDidUpdate props:", this.props, "prevProps:", prevProps);
-    console.log("EditorPage compDidUpdate state:", this.state, "prevState:", prevState);
 
     if (this.props.fileName !== prevProps.fileName || this.props.code !== prevProps.code) {
 
@@ -280,26 +281,39 @@ export class EditorPage extends React.PureComponent<Props & ReduxEditorPageProps
       let fileContent = '';
 
       if (fileName.includes('.h')) {
-        const includeContent = await axios.get('/get-file-contents', {
+        const includeContent = isDemoMode ? loadDemoWorkspaceFile(
+          userName,
+          projectName,
+          fileName
+        ) : await axios.get('/get-file-contents', {
           params: {
             filePath: `/home/kipr/Documents/KISS/${userName}/${projectName}/include/${fileName}`,
           },
         });
-        fileContent = typeof includeContent.data === 'string' ? includeContent.data : JSON.stringify(includeContent.data);
+        fileContent = typeof includeContent === 'string' ? includeContent : JSON.stringify(includeContent);
+        //fileContent = typeof includeContent.data === 'string' ? includeContent.data : JSON.stringify(includeContent.data);
       } else if (fileName.includes('.txt')) {
-        const userFileContent = await axios.get('/get-file-contents', {
+        const userFileContent = isDemoMode ? loadDemoWorkspaceFile(
+          userName,
+          projectName,
+          fileName
+        ) : await axios.get('/get-file-contents', {
           params: {
             filePath: `/home/kipr/Documents/KISS/${userName}/${projectName}/data/${fileName}`,
           },
         });
-        fileContent = typeof userFileContent.data === 'string' ? userFileContent.data : JSON.stringify(userFileContent.data);
+        fileContent = typeof userFileContent === 'string' ? userFileContent : JSON.stringify(userFileContent);
       } else {
-        const srcContent = await axios.get('/get-file-contents', {
+        const srcContent = isDemoMode ? loadDemoWorkspaceFile(
+          userName,
+          projectName,
+          fileName
+        ) : await axios.get('/get-file-contents', {
           params: {
             filePath: `/home/kipr/Documents/KISS/${userName}/${projectName}/src/${fileName}`,
           },
         });
-        fileContent = typeof srcContent.data === 'string' ? srcContent.data : JSON.stringify(srcContent.data);
+        fileContent = typeof srcContent === 'string' ? srcContent : JSON.stringify(srcContent);
       }
 
       this.setState((prevState) => {
@@ -344,9 +358,34 @@ export class EditorPage extends React.PureComponent<Props & ReduxEditorPageProps
 
   };
 
-  private onIndentCode_ = () => {
-    if (this.props.editorRef) this.props.editorRef.current.ivygate.formatCode();
-  };
+private onIndentCode_ = async () => {
+  const ivygate = this.props.editorRef?.current?.ivygate;
+
+  if (!ivygate) return;
+
+  if (isDemoMode) {
+    const monacoEditor = ivygate.editor;
+
+    if (!monacoEditor) return;
+
+    // Register the original Ivygate formatter.
+    ivygate.changeFormatter(format);
+
+    const action = monacoEditor.getAction(
+      'editor.action.formatDocument'
+    );
+
+    if (action?.isSupported()) {
+      await action.run();
+    } else {
+      console.warn('Document formatting is unavailable');
+    }
+
+    return;
+  }
+
+  await ivygate.formatCode();
+};
 
   private onDownloadClick_ = () => {
     const { language, fileName } = this.state;

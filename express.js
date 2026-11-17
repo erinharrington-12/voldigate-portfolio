@@ -64,6 +64,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 if (config.server.dependencies.scratch_rt) {
   console.log('Scratch Runtime is enabled.');
   app.use(
@@ -93,7 +94,7 @@ app.use(
 
 app.post('/create-classroom', express.json(), async (req, res) => {
   const { classroomName } = req.body;
-  console.log('Received classroom creation request:', { classroomName });
+
   if (!classroomName) {
     return res.status(400).json({ error: 'Classroom name is required' });
   }
@@ -110,16 +111,15 @@ app.post('/create-classroom', express.json(), async (req, res) => {
     // Check if the classroom directory already exists
     data = JSON.parse(await fs.readFile(jsonDirectory, 'utf-8'));
   } catch (error) {
-    console.log('Classrooms JSON file does not exist, creating new one.');
+
     data = { classrooms: [] };
     await fs.writeFile(jsonDirectory, JSON.stringify(data, null, 2), 'utf-8');
   }
-  console.log('Classroom directory exists or created:', classroomDirectory);
-  console.log('create-classroom data:', data);
+
   try {
     const existingClassrooms = data.classrooms.map((c) => c.name);
     if (existingClassrooms.includes(classroomName)) {
-      console.log('Classroom already exists:', classroomName);
+
       return res.status(400).json({
         error: 'Classroom already exists',
         classroomList: existingClassrooms,
@@ -128,9 +128,9 @@ app.post('/create-classroom', express.json(), async (req, res) => {
     try {
       data.classrooms.push({ name: classroomName, users: [] });
 
-      console.log('data:', data);
+
       await fs.writeFile(jsonDirectory, JSON.stringify(data, null, 2), 'utf-8');
-      console.log('Classroom directory created:', classroomPath);
+
       return res.status(200).json({
         message: 'Classroom created successfully',
         classroomList: await fs.readdir(classroomDirectory),
@@ -150,10 +150,7 @@ app.post('/create-classroom', express.json(), async (req, res) => {
 });
 
 async function addUserToClassroom(classroom, createdUser) {
-  console.log('Received request to add user to classroom:', {
-    createdUser,
-    classroom,
-  });
+
   if (!createdUser || !classroom) {
     return res
       .status(400)
@@ -167,15 +164,14 @@ async function addUserToClassroom(classroom, createdUser) {
   try {
     // Ensure the classroom directory exists
     await fs.mkdir(classroomDirectory, { recursive: true });
-    console.log('Classroom directory exists or created:', classroomDirectory);
 
     // Read the existing classrooms data
     let data = {};
     try {
       data = JSON.parse(await fs.readFile(jsonDirectory, 'utf-8'));
-      console.log('Classrooms JSON file read successfully:', data);
+
     } catch (error) {
-      console.log('Classrooms JSON file does not exist, creating new one.');
+
       data = { classrooms: [] };
       await fs.writeFile(jsonDirectory, JSON.stringify(data, null, 2), 'utf-8');
     }
@@ -186,10 +182,7 @@ async function addUserToClassroom(classroom, createdUser) {
     );
     if (!classroomEntry) {
       return { message: 'Classroom not found' };
-    } else {
-      console.log('Classroom found:', classroomEntry);
-      console.log('Classroom users:', classroomEntry.users);
-    }
+    } 
 
     // Check if the user already exists in the classroom
     if (classroomEntry.users.some((u) => u.userName === createdUser.userName)) {
@@ -200,10 +193,6 @@ async function addUserToClassroom(classroom, createdUser) {
     classroomEntry.users.push(createdUser);
     await fs.writeFile(jsonDirectory, JSON.stringify(data, null, 2), 'utf-8');
 
-    console.log(
-      `User ${createdUser.userName} added to classroom ${classroom.name}`,
-    );
-    console.log('classroomEntry: ', classroomEntry);
     return {
       status: 200,
       message: `User ${createdUser.userName} added to classroom ${classroom.name}`,
@@ -220,13 +209,7 @@ async function addUserToClassroom(classroom, createdUser) {
 
 app.post('/upload-project', express.json(), async (req, res) => {
   const { user, project, srcFiles, includeFiles, dataFiles } = req.body;
-  console.log('Received project upload request:', {
-    user,
-    project,
-    srcFiles,
-    includeFiles,
-    dataFiles,
-  });
+
   if (!user || !project || !srcFiles || !includeFiles || !dataFiles) {
     return res.status(400).json({ error: 'Invalid request data' });
   }
@@ -373,7 +356,6 @@ app.post('/upload-project', express.json(), async (req, res) => {
 
 app.post('/move-project', express.json(), async (req, res) => {
   const { user, project, newUser } = req.body;
-  console.log('Received project move request:', { user, project, newUser });
   if (!user || !project || !newUser) {
     return res.status(400).json({ error: 'Invalid request data' });
   }
@@ -431,7 +413,7 @@ app.post('/move-project', express.json(), async (req, res) => {
 
 app.post('/upload-file', express.json(), async (req, res) => {
   const { user, project, files } = req.body;
-  console.log('Received file upload request:', { user, project, files });
+
   if (!user || !project || !files) {
     return res.status(400).json({ error: 'Invalid request data' });
   }
@@ -803,41 +785,33 @@ let pty;
 let os;
 wss.on('connection', (ws, req) => {
   console.log('WebSocket connection established');
-  console.log('WebSocket request pathname:', req.url);
 
   if (req.url === '/ws/sensors') {
-    console.log('WebSocket connection for sensors established');
+
 
     ws.on('message', (message) => {
       try {
         const data = JSON.parse(message);
         switch (data.type) {
           case 'start-analog':
-            console.log('Received start-analog message');
             startAnalogPolling();
             break;
           case 'start-digital':
-            console.log('Received start-digital message');
             startDigitalPolling();
             break;
           case 'start-accelerometer':
-            console.log('Received start-accelerometer message');
             startAccelerometerPolling();
             break;
           case 'start-gyroscope':
-            console.log('Received start-gyro message');
             startGyroPolling();
             break;
           case 'start-magnetometer':
-            console.log('Received start-magnetometer message');
             startMagnetometerPolling();
             break;
           case 'start-button':
-            console.log('Received start-button message');
             startButtonPolling();
             break;
           case 'stop-all':
-            console.log('Received stop-all message');
             stopPolling();
             break;
         }
@@ -848,7 +822,6 @@ wss.on('connection', (ws, req) => {
 
     ws.send(JSON.stringify({ analog: latestAnalogValues }));
   } else if (req.url === '/ws/terminal') {
-    console.log('WebSocket connection for terminal established');
 
     if (!pty) pty = require('node-pty');
     if (!os) os = require('os');
@@ -866,12 +839,12 @@ wss.on('connection', (ws, req) => {
     });
 
     ws.on('message', (message) => {
-      console.log('Received message from terminal:', message);
+
       ptyProcess.write(message);
     });
 
     ws.on('close', () => {
-      console.log('WebSocket connection closed for terminal');
+
       ptyProcess.kill();
     });
   }
@@ -916,7 +889,6 @@ app.post('/disable-servo', express.json(), (req, res) => {
     return res.status(400).json({ error: 'Servo type incorrect, need number' });
   }
   try {
-    console.log(`Disabling servo: ${servo}`);
     servoAddon.disable_servo(servo);
 
     res.status(200).json({ message: `Servo ${servo} disable` });
@@ -995,7 +967,7 @@ app.post('/stop-all-motors', express.json(), (req, res) => {
 
 app.post('/clear-motor-position', express.json(), (req, res) => {
   const { motor } = req.body;
-  console.log('Clearing motor position for motor:', motor);
+
   if (!motorAddon) motorAddon = require('./build/Release/motor_addon.node');
   if (typeof motor !== 'number') {
     return res.status(400).json({ error: 'Invalid input' });
@@ -1039,7 +1011,6 @@ app.get('/stream-motor-velocities', (req, res) => {
   }, 500);
 
   req.on('close', () => {
-    console.log('Closing motor velocity stream');
     clearInterval(motorVelPollingInterval);
 
     res.end();
@@ -1051,7 +1022,6 @@ app.get('/stream-motor-positions', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
   res.flushHeaders();
-  console.log('Starting motor position stream');
   if (!motorAddon) motorAddon = require('./build/Release/motor_addon.node');
 
   const interval = setInterval(() => {
@@ -1118,18 +1088,14 @@ let declaredVariables;
 app.post('/convert-xml-to-c', express.json(), async (req, res) => {
   const { xml, filePath } = req.body;
 
-  console.log('/convert-xml-to-c received XML:', xml);
-  console.log('/convert-xml-to-c filePath:', filePath);
   let finalCode = '';
 
   try {
     // Parse the XML string into a DOM
     const xmlDoc = parseXml(xml);
-    console.log('xml: ', xml);
 
     // Parse the XML document into blocks
     const blockDetected = xml.includes('block');
-    console.log('blockDetected: ', blockDetected);
     const blockNodes = xmlDoc.getElementsByTagName('block');
     if (blockNodes && blockDetected) {
       const topBlocks = Array.from(blockNodes).map(parseBlockXml);
@@ -1137,7 +1103,6 @@ app.post('/convert-xml-to-c', express.json(), async (req, res) => {
       declaredVariables = new Map();
 
       finalCode = convertToCode(topBlocks[0]);
-      console.log('finalCode: ', finalCode);
       createAndSaveFile(filePath, finalCode);
       return res.status(200).json({
         code: finalCode,
@@ -1224,18 +1189,14 @@ function getValue(child) {
   return convertToCode(child, 0, true).trim();
 }
 function extractCategoryAndFunction(type) {
-  console.log('Type received:', type);
 
   for (const module of modules) {
-    console.log('Checking module:', module);
     if (type.startsWith(module + '_')) {
       const functionName = type.substring(module.length + 1);
-      console.log('Found function:', functionName);
       return { category: module, functionName };
     }
   }
 
-  console.log('No match found for type:', type); // Log if no match was found
   return null;
 }
 
@@ -1460,8 +1421,6 @@ function convertToCode(block, indentLevel = 1, asExpression = false) {
       op2Value = '/* missing operand2 */';
     }
 
-    console.log('op1Value: ', op1Value);
-    console.log('op2Value: ', op2Value);
     if (functionName === 'random') {
       const rand1 = block.children?.[0]?.fields?.NUM ?? '/* missing min */';
       const rand2 = block.children?.[1]?.fields?.NUM ?? '/* missing max */';
@@ -1517,7 +1476,6 @@ function convertToCode(block, indentLevel = 1, asExpression = false) {
         } else {
           cCode += `${indent}/* missing variable name or value */\n`;
         }
-        console.log('declaredVariables: ', declaredVariables);
         break;
 
       case 'changevariableby':
@@ -1752,7 +1710,6 @@ async function setUserInterfaceMode(userName, newMode) {
     await fs.access(usersJsonPath);
     const configRaw = await fs.readFile(usersJsonPath, 'utf-8');
     const configData = JSON.parse(configRaw);
-    console.log('User config data:', configData);
     if (configData[userName]) {
       configData[userName].interfaceMode = newMode;
     } else {
@@ -1764,10 +1721,7 @@ async function setUserInterfaceMode(userName, newMode) {
       JSON.stringify(configData, null, 2),
       'utf-8',
     );
-    console.log(
-      'Updated users.json with new interface mode for user:',
-      userName,
-    );
+
   } catch (error) {
     console.error('Error reading users.json:', error);
   }
@@ -1778,7 +1732,6 @@ async function setUserInterfaceMode(userName, newMode) {
 function createFolderHandler() {
   return async (req, res) => {
     const userName = req.query.userName;
-    console.log('createFolderHandler called with user:', userName);
 
     const userJsonPath = usersJsonPath;
 
@@ -1793,9 +1746,6 @@ function createFolderHandler() {
         console.warn(`User "${userName}" not found`);
         return res.status(404).json({ error: 'User not found' });
       }
-
-      console.log('Found user:', foundUser);
-
       // Ensure all project arrays are plain arrays
       const sanitizedProjects = (foundUser.projects || []).map((project) => ({
         ...project,
@@ -1810,11 +1760,6 @@ function createFolderHandler() {
           : [],
       }));
 
-      console.log(
-        'Sanitized projects to send:',
-        JSON.stringify(sanitizedProjects, null, 2),
-      );
-      console.log("User's projects:", sanitizedProjects);
       return res.status(200).json({ projects: sanitizedProjects });
     } catch (error) {
       console.error('Error reading user JSON:', error);
@@ -1842,7 +1787,6 @@ async function getAllUserFiles(directory, zipFolder) {
 function getFileContents() {
   return async (req, res) => {
     const filePath = req.query.filePath;
-    console.log('getFileContents called with filePath:', filePath);
 
     if (!filePath) {
       return res
@@ -1877,7 +1821,6 @@ function getFileContents() {
 function saveFileContents() {
   return async (req, res) => {
     const { filePath, fileContents } = req.body;
-    console.log('saveFileContents called with filePath:', filePath);
 
     if (!filePath) {
       return res
@@ -1894,7 +1837,6 @@ function saveFileContents() {
     try {
       const { resolvedPath, user, project, fileType, fileName } =
         kissPaths.parseProjectFilePath(filePath);
-      console.log({ user, project, fileType, fileName });
       let isNewFile = false;
 
       try {
@@ -1905,7 +1847,6 @@ function saveFileContents() {
       await fs.writeFile(resolvedPath, fileContents);
 
       if (isNewFile) {
-        console.log('New file created, updating users.json and project config');
         await editUsersJson({ user, project, fileType, fileName });
         await editSpecificUserJson({ user, project, fileType, fileName });
         await editProjectJson({ user, project, fileType, fileName });
@@ -1919,9 +1860,6 @@ function saveFileContents() {
 }
 
 async function editUsersJson(data) {
-  console.log('Editing JSON to add data:', data);
-  console.log('Data user: ', data.user);
-
   const userJsonPath = usersJsonPath;
   const existingDataStr = await fs.readFile(userJsonPath, 'utf8');
   const existingData = JSON.parse(existingDataStr);
@@ -1929,7 +1867,6 @@ async function editUsersJson(data) {
   // Check if existingData is array or object
   let userObj;
   if (Array.isArray(existingData)) {
-    console.log('Existing data is an array');
     userObj = existingData.find((u) => u.userName === data.user);
   } else {
     // assume object with numeric keys
@@ -1937,18 +1874,12 @@ async function editUsersJson(data) {
     userObj = dataArray.find((u) => u.userName === data.user);
   }
 
-  console.log('User Object: ', userObj);
-
   // Proceed to update userObj and then write back...
   const userProjects = userObj.projects || [];
-  console.log('User Projects: ', userProjects);
-
   const foundProject = userProjects.find(
     (project) => project.projectName === data.project,
   );
-  console.log('Found Project: ', foundProject);
   if (foundProject) {
-    console.log('Project already exists, updating file details');
 
     switch (data.fileType) {
       case 'include':
@@ -1964,9 +1895,6 @@ async function editUsersJson(data) {
         console.error('Unknown file type:', data.fileType);
         return;
     }
-    console.log('Updated Project: ', foundProject);
-    console.log('Updated users.json: ', existingData);
-
     await fs.writeFile(
       userJsonPath,
       JSON.stringify(existingData, null, 2),
@@ -1976,26 +1904,21 @@ async function editUsersJson(data) {
 }
 
 async function editSpecificUserJson(data) {
-  console.log('EDIT SPECIFIC USER JSON');
-  console.log('Editing JSON to add data:', data);
-  console.log('Data user: ', data.user);
+
 
   const userJsonPath = kissPaths.userConfigPath(data.user);
   const existingDataStr = await fs.readFile(userJsonPath, 'utf8');
   const existingData = JSON.parse(existingDataStr);
 
-  console.log('Existing Data: ', existingData);
+
 
   // Proceed to update userObj and then write back...
-  const userProjects = existingData.projects || [];
-  console.log('User Projects: ', userProjects);
+  const userProjects = existingData.projects || [];;
 
   const foundProject = userProjects.find(
     (project) => project.projectName === data.project,
   );
-  console.log('Found Project: ', foundProject);
   if (foundProject) {
-    console.log('Project already exists, updating file details');
 
     switch (data.fileType) {
       case 'include':
@@ -2011,8 +1934,6 @@ async function editSpecificUserJson(data) {
         console.error('Unknown file type:', data.fileType);
         return;
     }
-    console.log('Updated Project: ', foundProject);
-    console.log('Updated users.json: ', existingData);
 
     await fs.writeFile(
       userJsonPath,
@@ -2023,15 +1944,12 @@ async function editSpecificUserJson(data) {
 }
 
 async function editProjectJson(data) {
-  console.log('EDIT PROJECT JSON');
-  console.log('Editing JSON to add data:', data);
-  console.log('Data user: ', data.user);
+
 
   const projectJsonPath = kissPaths.projectConfigPath(data.user, data.project);
   const projectConfigStr = await fs.readFile(projectJsonPath, 'utf8');
   const projectConfig = JSON.parse(projectConfigStr);
 
-  console.log('Project Config: ', projectConfig);
 
   if (projectConfig) {
     switch (data.fileType) {
@@ -2048,7 +1966,6 @@ async function editProjectJson(data) {
         console.error('Unknown file type:', data.fileType);
         return;
     }
-    console.log('Updated Project Config: ', projectConfig);
 
     await fs.writeFile(
       projectJsonPath,
@@ -2065,7 +1982,7 @@ function createAndSaveFile(filePath, fileContents) {
         console.error('Error writing file:', err);
         reject(err);
       } else {
-        console.log('File saved successfully');
+
         resolve();
       }
     });
@@ -2130,7 +2047,6 @@ app.post('/compile-code', async (req, res) => {
     ACTIVE_LANGUAGE: activeLanguage,
   };
 
-  console.log('compile-code request received with body:', req.body);
 
   execFile('node', ['compiler.js'], { env }, (error, stdout, stderr) => {
     if (error) {
@@ -2148,7 +2064,6 @@ app.post('/compile-code', async (req, res) => {
     // stdout should contain JSON string from compiler.js
     try {
       const result = JSON.parse(stdout);
-      console.log('Compiler result:', result);
       if (result.success) {
         return res.json({
           message: 'successful',
@@ -2172,12 +2087,12 @@ app.post('/compile-code', async (req, res) => {
 
 app.post('/remove-user-from-classroom', async (req, res) => {
   const { user, classroom } = req.body;
-  console.log('Received request body:', req.body);
+
 
   try {
     const jsonPath = classroomsJsonPath;
     const jsonData = await readJsonFile(jsonPath);
-    console.log('classrooms.json: ', jsonData);
+
 
     const foundClassroom = jsonData.classrooms.find(
       (c) => c.name === classroom.name,
@@ -2191,8 +2106,6 @@ app.post('/remove-user-from-classroom', async (req, res) => {
       );
 
       const afterCount = foundClassroom.users.length;
-
-      console.log('Updated classroom users:', foundClassroom.users);
 
       // Save back to file
       await fs.writeFile(jsonPath, JSON.stringify(jsonData, null, 2));
@@ -2221,8 +2134,6 @@ app.post('/remove-user-from-classroom', async (req, res) => {
 
 app.post('/add-user-project-to-classroom', async (req, res) => {
   const { user } = req.body;
-  console.log('Received request body:', req.body);
-  console.log('User Projects: ', user.projects);
 
   const jsonDirectory = classroomsJsonPath;
 
@@ -2233,8 +2144,6 @@ app.post('/add-user-project-to-classroom', async (req, res) => {
   } catch (error) {
     console.log('Classrooms JSON not found, starting fresh.');
   }
-
-  console.log('Current classrooms data:', data);
 
   // Find classroom by name
   let foundClassroom = data.classrooms.find(
@@ -2260,8 +2169,6 @@ app.post('/add-user-project-to-classroom', async (req, res) => {
 
     foundClassroom.users.sort((a, b) => a.userName.localeCompare(b.userName));
 
-    console.log('Updated classroom users:', foundClassroom.users);
-
     // Save back to file
     await fs.writeFile(jsonDirectory, JSON.stringify(data, null, 2), 'utf8');
 
@@ -2273,13 +2180,11 @@ app.post('/add-user-project-to-classroom', async (req, res) => {
 
 app.post('/move-user-to-classroom', async (req, res) => {
   const { user, newClassroom } = req.body;
-  console.log('Moving user:', user, 'to classroom:', newClassroom);
 
   try {
     // Load user data
     let userData = await readJsonFile(usersJsonPath);
     const foundUser = userData[user.userName];
-    console.log('move-user-to-classroom userData:', userData);
 
     if (!foundUser) {
       return res.status(404).json({ error: 'User not found' });
@@ -2312,7 +2217,6 @@ app.post('/move-user-to-classroom', async (req, res) => {
       console.error('Error updating user config:', error);
     }
     const updatedUserConfig = await fs.readFile(userConfigPath, 'utf-8');
-    console.log('Updated .user.config.json: ', updatedUserConfig);
 
     //------------------------------------------
     // Load classroom data
@@ -2375,10 +2279,7 @@ async function pasteFiletoProject(pasteData, usersData) {
     );
 
     if (foundProject) {
-      console.log(
-        'pasteData.pasteFromData.toPasteObject:',
-        pasteData.pasteFromData.toPasteObject,
-      );
+
       let folder;
       switch (fileType) {
         case 'h':
@@ -2513,7 +2414,6 @@ async function pasteProjectToUser(pasteData, usersData) {
 }
 
 app.post('/paste-object', async (req, res) => {
-  console.log('Received request body:', req.body);
   const { pasteData } = req.body;
   const usersData = JSON.parse(await fs.readFile(usersJsonPath, 'utf8'));
 
@@ -2525,7 +2425,6 @@ app.post('/paste-object', async (req, res) => {
     pasteData.pasteFromData.toPasteObject.copyObjectFile &&
     typeof pasteData.pasteFromData.toPasteObject.copyObjectFile === 'string'
   ) {
-    console.log('Pasting file to project');
     [pasteToFinalPath, pasteFromPath] = await pasteFiletoProject(
       pasteData,
       usersData,
@@ -2536,15 +2435,12 @@ app.post('/paste-object', async (req, res) => {
     pasteData.pasteFromData.toPasteObject.copyObjectProject &&
     pasteData.pasteFromData.toPasteObject.copyObjectProject.projectName
   ) {
-    console.log('Pasting project to user');
     [pasteToFinalPath, pasteFromPath] = await pasteProjectToUser(
       pasteData,
       usersData,
     );
   }
 
-  console.log('Final paste path:', pasteToFinalPath);
-  console.log('Final paste from path:', pasteFromPath);
 
   return res.status(200).json({
     message: 'Object pasted successfully',
@@ -2553,7 +2449,6 @@ app.post('/paste-object', async (req, res) => {
 
 app.post('/upload-user', async (req, res) => {
   const { user, configFile } = req.body;
-  console.log('/upload-user received request body:', req.body);
 
   let usersData = {};
 
@@ -2573,7 +2468,6 @@ app.post('/upload-user', async (req, res) => {
         JSON.stringify(usersData, null, 2),
         'utf-8',
       );
-      console.log('Updated users.json successfully');
     }
   } catch (error) {
     console.error('Error reading users.json:', error);
@@ -2591,7 +2485,6 @@ app.post('/upload-user', async (req, res) => {
   }
   try {
     await fs.mkdir(userDirectory, { recursive: true });
-    console.log('User directory created:', userDirectory);
 
     // Write user config file
     await fs.writeFile(
@@ -2599,7 +2492,6 @@ app.post('/upload-user', async (req, res) => {
       JSON.stringify(userConfigContent[user.userName], null, 2),
       'utf-8',
     );
-    console.log('User config file created:', userConfigPath);
     const projects = user.projects || [];
     for (const project of projects) {
       const projectDirectory = kissPaths.projectDirectory(
@@ -2614,11 +2506,10 @@ app.post('/upload-user', async (req, res) => {
       // Check if project directory already exists
       try {
         await fs.access(projectDirectory);
-        console.log(`Project directory already exists: ${projectDirectory}`);
+
       } catch {
         // Create project directory if it doesn't exist
         await fs.mkdir(projectDirectory, { recursive: true });
-        console.log('Project directory created:', projectDirectory);
 
         // Write project config file
         await fs.writeFile(
@@ -2632,7 +2523,6 @@ app.post('/upload-user', async (req, res) => {
           ),
           'utf-8',
         );
-        console.log('Project config file created:', projectConfigPath);
 
         // Create project folders
         const folders = ['bin', 'include', 'src', 'data'];
@@ -2644,7 +2534,6 @@ app.post('/upload-user', async (req, res) => {
           );
           try {
             await fs.mkdir(folderPath, { recursive: true });
-            console.log(`Folder created: ${folderPath}`);
           } catch (error) {
             console.error(`Error creating folder ${folderPath}:`, error);
           }
@@ -2655,10 +2544,6 @@ app.post('/upload-user', async (req, res) => {
                 project.includeFolderFiles &&
                 project.includeFolderFiles.length > 0
               ) {
-                console.log(
-                  'Creating include files:',
-                  project.includeFolderFiles,
-                );
                 for (const file of project.includeFolderFiles) {
                   const filePath = kissPaths.projectFilePath(
                     user.userName,
@@ -2668,7 +2553,6 @@ app.post('/upload-user', async (req, res) => {
                   );
                   try {
                     await fs.writeFile(filePath, file.content, 'utf-8');
-                    console.log(`File created: ${filePath}`);
                   } catch (error) {
                     console.error(`Error creating file ${filePath}:`, error);
                   }
@@ -2686,7 +2570,6 @@ app.post('/upload-user', async (req, res) => {
                   );
                   try {
                     await fs.writeFile(filePath, file.content, 'utf-8');
-                    console.log(`File created: ${filePath}`);
                   } catch (error) {
                     console.error(`Error creating file ${filePath}:`, error);
                   }
@@ -2707,7 +2590,6 @@ app.post('/upload-user', async (req, res) => {
                   );
                   try {
                     await fs.writeFile(filePath, file.content, 'utf-8');
-                    console.log(`File created: ${filePath}`);
                   } catch (error) {
                     console.error(`Error creating file ${filePath}:`, error);
                   }
@@ -2752,7 +2634,6 @@ app.post('/upload-user', async (req, res) => {
             userName: user.userName,
             interfaceMode: userConfigContent[user.userName].interfaceMode,
           });
-          console.log('User added to classroom:', foundClassroom.users);
 
           // Save back to file
           await fs.writeFile(
@@ -2775,8 +2656,6 @@ app.post('/upload-user', async (req, res) => {
 
 app.post('/initialize-user', async (req, res) => {
   const { user } = req.body;
-  console.log('/initialize-user Received request body:', req.body);
-
   let userDirectory;
   let userConfigPath;
   try {
@@ -2790,16 +2669,13 @@ app.post('/initialize-user', async (req, res) => {
   try {
     const fileContent = await fs.readFile(usersJsonPath, 'utf8');
     usersData = JSON.parse(fileContent);
-    console.log('Current users data:', usersData);
   } catch (error) {
     console.error('Error reading users.json:', error);
   }
 
   const foundUser = usersData[user.userName];
-  console.log('Found user:', foundUser);
   try {
     if (!foundUser) {
-      console.log('User not found in users.json, adding user.');
       usersData[user.userName] = {
         userName: user.userName,
         interfaceMode: user.interfaceMode,
@@ -2807,7 +2683,6 @@ app.post('/initialize-user', async (req, res) => {
         classroomName: null,
       };
     } else {
-      console.log('User found in users.json, updating user.');
       foundUser.interfaceMode = user.interfaceMode;
       foundUser.projects = user.projects || [];
     }
@@ -2824,7 +2699,6 @@ app.post('/initialize-user', async (req, res) => {
       JSON.stringify(sortedUsersData, null, 2),
       'utf-8',
     );
-    console.log('Updated users.json successfully');
   } catch (error) {
     console.error('Error updating users.json:', error);
   }
@@ -2858,8 +2732,7 @@ app.post('/initialize-user', async (req, res) => {
 
 app.post('/initialize-project', async (req, res) => {
   const { user, project, classroomName } = req.body;
-  console.log('/initialize-project Received request body:', req.body);
-  console.log('User projects: ', user.projects);
+
 
   // Validate input early
   if (!user || !project) {
@@ -2888,16 +2761,14 @@ app.post('/initialize-project', async (req, res) => {
   try {
     const fileContent = await fs.readFile(usersJsonPath, 'utf8');
     usersData = JSON.parse(fileContent);
-    console.log('Current users data:', usersData);
   } catch (error) {
     console.error('Error reading users.json:', error);
   }
 
   const foundUser = usersData[user.userName];
-  console.log('Found user:', foundUser);
   try {
     if (!foundUser) {
-      console.log('User not found in users.json, adding user.');
+
       usersData[user.userName] = {
         userName: user.userName,
         interfaceMode: user.interfaceMode,
@@ -2905,7 +2776,7 @@ app.post('/initialize-project', async (req, res) => {
         classroomName: classroomName || null,
       };
     } else {
-      console.log('User found in users.json, updating user.');
+
       foundUser.interfaceMode = user.interfaceMode;
       foundUser.projects = user.projects || [];
     }
@@ -2922,7 +2793,7 @@ app.post('/initialize-project', async (req, res) => {
       JSON.stringify(sortedUsersData, null, 2),
       'utf-8',
     );
-    console.log('Updated users.json successfully');
+
   } catch (error) {
     console.error('Error updating users.json:', error);
   }
@@ -3013,7 +2884,7 @@ app.post('/initialize-project', async (req, res) => {
 
     try {
       await fs.access(mainFilePath);
-      console.log(`File ${mainFilePath} already exists.`);
+
     } catch {
       await fs.writeFile(
         mainFilePath,
@@ -3022,7 +2893,6 @@ app.post('/initialize-project', async (req, res) => {
       );
     }
 
-    console.log('Initial files and folder structure committed.');
     return res.status(200).json({
       message: 'User Project folder created successfully',
     });
@@ -3068,16 +2938,15 @@ app.post('/delete-file', async (req, res) => {
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
-  console.log('File path to delete:', filePath);
+
 
   try {
     // Check if the file exists
     await fs.access(filePath);
-    console.log('File exists and is accessible.');
+
 
     //Delete file
     await fs.rm(filePath);
-    console.log(`Deleted file path: ${filePath}`);
 
     //Update users.json to remove file from project
     const usersData = JSON.parse(await fs.readFile(usersJsonPath, 'utf8'));
@@ -3151,7 +3020,6 @@ app.post('/delete-project', async (req, res) => {
     // Recursively delete the entire project directory
     await fs.rm(projectDirectory, { recursive: true, force: true });
 
-    console.log(`Deleted project directory: ${projectDirectory}`);
 
     res.status(200).send('Repository deleted successfully.');
   } catch (error) {
@@ -3163,7 +3031,6 @@ app.post('/delete-project', async (req, res) => {
 //Delete user
 app.post('/delete-user', async (req, res) => {
   const { user } = req.body;
-  console.log('Received request body:', req.body);
 
   if (!user) {
     return res.status(400).json({ error: 'Missing required fields.' });
@@ -3196,26 +3063,23 @@ app.post('/delete-user', async (req, res) => {
 
   try {
     // Check if the user exists in classrooms.json
-    console.log('Checking classrooms.json for user:', user);
+
     const classData = JSON.parse(await fs.readFile(classJsonPath, 'utf8'));
-    console.log('/delete classData: ', classData);
+
     const classroom = classData.classrooms.find(
       (c) => c.name === user.classroomName,
     );
 
-    console.log('Found classroom: ', classroom);
     const classroomUsers = classData.classrooms;
-    console.log('classroomUsers: ', classroomUsers);
+
 
     if (classroom) {
-      console.log(`User ${user.userName} found in classroom ${classroom.name}`);
+
       const foundUser = classroom.users.find(
         (u) => u.userName === user.userName,
       );
       if (foundUser) {
-        console.log(
-          `Removing user ${user.userName} from classroom ${classroom.name}`,
-        );
+
         const userIndex = classroom.users.findIndex(
           (u) => u.userName === user.userName,
         );
@@ -3226,9 +3090,7 @@ app.post('/delete-user', async (req, res) => {
             JSON.stringify(classData, null, 2),
             'utf8',
           );
-          console.log(
-            `User ${user.userName} removed from classroom ${classroom.name}`,
-          );
+
         }
       }
     }
@@ -3242,8 +3104,6 @@ app.post('/delete-user', async (req, res) => {
     // Recursively delete the entire userDirectory directory
     await fs.rm(userDirectory, { recursive: true, force: true });
 
-    console.log(`Deleted userDirectory directory: ${userDirectory}`);
-
     res.status(200).send('Repository deleted successfully.');
   } catch (error) {
     console.error('Error deleting repository:', error);
@@ -3253,7 +3113,6 @@ app.post('/delete-user', async (req, res) => {
 
 app.post('/delete-classroom', async (req, res) => {
   const { classroomName } = req.body;
-  console.log('/delete-classroom Received request body:', req.body);
   try {
     const classroomsData = JSON.parse(
       await fs.readFile(classroomsJsonPath, 'utf8'),
@@ -3284,7 +3143,7 @@ app.post('/delete-classroom', async (req, res) => {
         JSON.stringify(usersData, null, 2),
         'utf8',
       );
-      console.log('Removed classroom from users.');
+
 
       //Remove classroom from each user's .user.config.json
       for (const user of classroomsData.classrooms[classroomIndex].users) {
@@ -3300,9 +3159,7 @@ app.post('/delete-classroom', async (req, res) => {
               JSON.stringify(userConfig, null, 2),
               'utf8',
             );
-            console.log(
-              `Updated ${user.userName}'s config to remove classroom.`,
-            );
+
           }
         } catch (error) {
           console.error(`Error updating ${user.userName}'s config:`, error);
@@ -3320,7 +3177,6 @@ app.post('/delete-classroom', async (req, res) => {
       'utf8',
     );
 
-    console.log(`Deleted classroom: ${classroomName}`);
     return res.status(200).json({ message: 'Classroom deleted successfully.' });
   } catch (error) {
     console.error('Error deleting classroom:', error);
@@ -3456,16 +3312,12 @@ app.get('/get-all-file-names', async (req, res) => {
 
       // Read the contents of the directory
       const files = await fs.readdir(dir);
-      console.log('/get-all-file-names - Reading directory:', dir);
-      console.log('Files found:', files);
-
-      console.log('getAllFileNames: ', files);
       return files;
     };
 
     const safeDirPath = kissPaths.resolveClientPath(dirPath);
     const allFileNames = await getAllFileNames(safeDirPath);
-    console.log('All file names found:', allFileNames);
+
 
     // Send the list of file names as the response
     res.status(200).json({
@@ -3509,10 +3361,10 @@ app.get('/load-users', async (req, res) => {
       const fileContent = await fs.readFile(usersJson, 'utf8');
       data = JSON.parse(fileContent);
     } catch (error) {
-      console.log('users.json not found, starting fresh.');
+
       data = {};
     }
-    console.log('Current users data:', data);
+
 
     // Send the list of users as the response
     res.status(200).json({
@@ -3547,8 +3399,6 @@ app.get('/get-users', async (req, res) => {
   try {
     const fileContent = await fs.readFile(usersJsonPath, 'utf8');
     data = JSON.parse(fileContent);
-    console.log('Current users data:', data);
-
     return res.status(200).json({
       users: Object.keys(data).map((userName) => ({
         userName: userName,
@@ -3568,7 +3418,6 @@ app.get('/get-project-folders', createFolderHandler());
 app.get('/get-project-data', async (req, res) => {
   try {
     const user = req.query.user;
-    console.log('req.query:', req.query);
   } catch (error) {
     console.error('Error getting project data:', error);
     res.status(500).send('Error getting project data');
@@ -3585,7 +3434,6 @@ app.post('/add-user-to-classroom', express.json(), async (req, res) => {
   const { classroom, userName } = req.body;
   try {
     const result = await addUserToClassroom(userName, classroom);
-    console.log('addUserToClassroom result: ', result);
     if (result) {
       res
         .status(200)
@@ -3602,7 +3450,6 @@ app.post('/add-user-to-classroom', express.json(), async (req, res) => {
 //Change interface mode
 app.post('/change-interface-mode', (req, res) => {
   const { user, newMode } = req.body;
-  console.log('Received request body:', req.body);
 
   if (!user || !newMode) {
     return res.status(400).json({ error: 'Missing userName or newMode' });
@@ -3621,14 +3468,10 @@ app.post('/change-interface-mode', (req, res) => {
 
 //Rename user, project, or file
 app.post('/rename', async (req, res) => {
-  console.log('usersJsonPath:', usersJsonPath);
-
-  console.log('Received request body:', req.body);
   const usersData = JSON.parse(await fs.readFile(usersJsonPath, 'utf8'));
   const classroomsData = JSON.parse(
     await fs.readFile(classroomsJsonPath, 'utf8'),
   );
-  console.log('classroomsData:', classroomsData);
 
   if (req.body.renameType === 'Classroom') {
     //Check if classroom name already exists
@@ -3645,7 +3488,6 @@ app.post('/rename', async (req, res) => {
     //Rename classroom name in users.json
     try {
       Object.entries(usersData).forEach(([userName, userData]) => {
-        console.log(`${userName} is in classroom: ${userData.classroomName}`);
         if (userData.classroomName === req.body.oldClassroomName) {
           userData.classroomName = req.body.newClassroomName;
         }
@@ -3663,9 +3505,9 @@ app.post('/rename', async (req, res) => {
     try {
       Object.entries(classroomsData.classrooms).forEach(
         ([index, classroom]) => {
-          console.log(`Classroom ${index}: ${classroom.name}`);
+
           if (classroom.name === req.body.oldClassroomName) {
-            console.log('Renaming classroom:', classroom.name);
+
             classroom.name = req.body.newClassroomName;
           }
         },
@@ -3702,13 +3544,8 @@ app.post('/rename', async (req, res) => {
       // Rename the user directory asynchronously
       await fs.rename(oldUserDirectory, desiredUserDirectory);
 
-      console.log(
-        `Renamed user directory: ${oldUserDirectory} to ${desiredUserDirectory}`,
-      );
-
       const data = await fs.readFile(usersJsonPath, 'utf8');
       let usersData = JSON.parse(data);
-      console.log('Current users data:', usersData);
       // Update the user entry
       if (usersData[req.body.oldUserName]) {
         usersData[req.body.newUserName] = {
@@ -3716,9 +3553,7 @@ app.post('/rename', async (req, res) => {
           userName: req.body.newUserName,
         };
         delete usersData[req.body.oldUserName];
-        console.log('Preparing to write to users.json...');
-        console.log('Path:', usersJsonPath);
-        console.log('Data:', JSON.stringify(usersData, null, 2));
+
         await fs.writeFile(
           usersJsonPath,
           JSON.stringify(usersData, null, 2),
@@ -3726,35 +3561,23 @@ app.post('/rename', async (req, res) => {
         );
 
         if (usersData[req.body.newUserName].classroomName) {
-          console.log(
-            'usersData[req.body.newUserName].classroomName: ',
-            usersData[req.body.newUserName].classroomName,
-          );
+
           // Update classroom name in classrooms.json
           const classJsonPath = classroomsJsonPath;
           const classData = JSON.parse(
             await fs.readFile(classJsonPath, 'utf8'),
           );
-          console.log('classData: ', classData);
 
           const classroom = classData.classrooms.find(
             (c) => c.name === usersData[req.body.newUserName].classroomName,
           );
 
           if (classroom) {
-            console.log('Renaming user in classroom:', classroom.name);
-            console.log('Classroom.users: ', classroom.users);
-            console.log(
-              'userObj: ',
-              classroom.users.find(
-                (user) => user.userName === req.body.oldUserName,
-              ),
-            );
+
             const foundUser = classroom.users.find(
               (user) => user.userName === req.body.oldUserName,
             );
             if (foundUser) {
-              console.log('Found user in classroom:', foundUser);
               foundUser.userName = req.body.newUserName;
             }
           }
@@ -3765,7 +3588,6 @@ app.post('/rename', async (req, res) => {
             'utf8',
           );
 
-          console.log('Update classData: ', classData);
         }
       } else {
         console.warn(`User ${req.body.oldUserName} not found in users.json.`);
@@ -3805,8 +3627,6 @@ app.post('/rename', async (req, res) => {
       }
       await fs.rename(oldProjectDirectory, newProjectDirectory);
       try {
-        // const usersData = JSON.parse(await fs.readFile(usersJsonPath, "utf8"));
-        console.log('Current users data:', usersData);
         if (usersData[req.body.userName]) {
           // Update the project name in users.json
           const userProjects = usersData[req.body.userName].projects || [];
@@ -3908,8 +3728,6 @@ app.post('/rename', async (req, res) => {
 
       await fs.rename(oldFilePath, newFilePath);
 
-      console.log(`Renamed file: ${oldFilePath} to ${newFilePath}`);
-
       try {
         if (usersData[req.body.userName]) {
           // Update the file name in users.json
@@ -3919,13 +3737,11 @@ app.post('/rename', async (req, res) => {
           );
           if (projectIndex !== -1) {
             const projectFiles = userProjects[projectIndex] || [];
-            console.log('projectFiles: ', projectFiles);
             const fileIndex = projectFiles[fileDirectoryType]?.findIndex(
               (f) => f === req.body.oldFileName,
             );
             if (fileIndex !== -1) {
-              console.log('File: ', projectFiles[fileDirectoryType][fileIndex]);
-              projectFiles[fileDirectoryType][fileIndex] = req.body.newFileName;
+                projectFiles[fileDirectoryType][fileIndex] = req.body.newFileName;
               await fs.writeFile(
                 usersJsonPath,
                 JSON.stringify(usersData, null, 2),
@@ -3991,8 +3807,6 @@ app.get('/run-code', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
 
-  console.log('Executing:', runCommand, runArgs);
-
   const child = spawn(runCommand, runArgs, {
     detached: true,
     env: childEnv,
@@ -4001,8 +3815,7 @@ app.get('/run-code', (req, res) => {
   child.stdout.on('data', (data) => {
     const output = data.toString();
 
-    console.log('stdout:', output);
-    output.split('\n').forEach((line) => {
+   output.split('\n').forEach((line) => {
       if (line.trim() !== '') {
         res.write(`data: ${line}\n\n`);
         res.flush?.();
@@ -4026,7 +3839,7 @@ app.get('/run-code', (req, res) => {
       clearInterval(motorVelPollingInterval);
       motorVelPollingInterval = null;
     }
-    console.log(`Process exited with code ${code}`);
+
     res.write(`data: Process exited with code ${code}\n\n`);
     res.write('event: end\ndata: END\n\n');
     res.flush?.();
@@ -4042,7 +3855,7 @@ app.post('/stop-code', (req, res) => {
       process.kill(-currentChild.pid, 'SIGKILL'); // Use negative PID to kill the group
       try {
         motorAddon.allOff(); // or motorAddon.off(0), etc.
-        console.log('Motors stopped via addon.');
+
       } catch (motorErr) {
         console.error('Failed to stop motors:', motorErr);
       }
@@ -4109,7 +3922,6 @@ app.post('/feedback', (req, res) => {
   try {
     webhook = new WebhookClient({ url: hookURL });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message:
         'An error occured on the server. If you are a developer, your webhook url is likely wrong.',

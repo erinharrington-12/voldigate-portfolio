@@ -152,7 +152,6 @@ class ResizeableComboBox extends React.PureComponent<ResizeableComboBox.Props, R
 
     const { options, index, style, className, theme, minimal, widthTweak, mainFontSize,mainWidth} = props;
     const { focus } = state;
-    console.log("ResizeableComboBox render options", options, "index", index, "focus", focus);
 
 
     let dropDownStyle: React.CSSProperties;

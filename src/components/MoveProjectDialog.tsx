@@ -15,6 +15,8 @@ import { Fa } from './Fa';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import ResizeableComboBox from './ResizeableComboBox';
 import ComboBox from './ComboBox';
+import { moveDemoProjectToUser } from '../demo/demoFileStorage';
+import { isDemoMode } from '../demo/demoMode';
 
 export interface MoveProjectDialogPublicProps extends ThemeProps, StyleProps {
   user: User;
@@ -157,8 +159,7 @@ export class MoveProjectDialog extends React.PureComponent<Props, State> {
   }
 
   componentDidMount(): void {
-    console.log("MoveProjectDialog mounted");
-    console.log("MoveProjectDialog props", this.props);
+
     this.setState({
       userOptions: this.props.users.map(user => ({
         data: user.userName,
@@ -170,16 +171,19 @@ export class MoveProjectDialog extends React.PureComponent<Props, State> {
   }
   onFinalize_ = async () => {
 
-    console.log("MoveProjectDialog onFinalize_ props", this.props);
-    console.log("MoveProjectDialog onFinalize_ state", this.state);
-
     const { user, project } = this.props;
     const { selectedUser } = this.state;
 
+
+    if(isDemoMode){
+      moveDemoProjectToUser(user.userName,selectedUser.userName,  project.projectName);
+      this.props.onCloseMoveProjectDialog(selectedUser);
+      return;
+    }
     const moveProjectResponse = await axios.post('/move-project', { user, project, newUser: selectedUser });
-    console.log("MoveProjectDialog onFinalize_ moveProjectResponse", moveProjectResponse);
+
     if (moveProjectResponse.status === 200) {
-      console.log("MoveProjectDialog onFinalize_ project moved successfully");
+
       this.props.onCloseMoveProjectDialog(selectedUser);
     } else {
       console.error("MoveProjectDialog onFinalize_ error moving project", moveProjectResponse);
@@ -199,12 +203,12 @@ export class MoveProjectDialog extends React.PureComponent<Props, State> {
         });
       }
     }
-    console.log("MoveProjectDialog USER_OPTIONS ret", ret);
+
     return ret;
   })();
 
   onUserSelect_ = (index: number, option: ResizeableComboBox.Option): void => {
-    console.log("MoveProjectDialog onUserSelect_ index", index, "option", option);
+    
 
     const selectedUser = option.data as User;
 
@@ -216,12 +220,9 @@ export class MoveProjectDialog extends React.PureComponent<Props, State> {
     const { props, state } = this;
     const { style, className, theme, onClose, locale, project, users } = props;
     const { errorMessage, userOptions, selectedUser } = state;
-    console.log("MoveProjectDialog render userOptions", userOptions);
-    console.log("MoveProjectDialog render selectedUser", selectedUser);
-    console.log("MoveProjectDialog render users:", users);
-    console.log("MoveProjectDialog render USEROPTIONS", this.USER_OPTIONS);
+
     const userIndex = this.USER_OPTIONS.findIndex(option => option.text === selectedUser.userName);
-    console.log("MoveProjectDialog render userIndex", userIndex);
+
 
     return (
       <Dialog

@@ -6,3 +6,4 @@ declare const IDE_HAS_AMMO: boolean;
 declare const IDE_LIBKIPR_C_DOCUMENTATION: unknown | undefined;
 declare const IDE_LIBKIPR_C_COMMON_DOCUMENTATION: unknown | undefined;
 declare const IDE_I18N: unknown | undefined;
+declare const DEMO_MODE: boolean;

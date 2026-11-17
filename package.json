@@ -44,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^14.0.0",
     "eslint": "^7.22.0",
     "file-loader": "^6.0.0",
     "gettext-parser": "^6.0.0",
@@ -61,7 +62,7 @@
     "webpack": "^5.36.2",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.10.3",
+    "webpack-dev-server": "^4",
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
@@ -87,7 +88,7 @@
     "image-webpack-loader": "^6.0.0",
     "immer": "^9.0.15",
     "isarray": "^2.0.5",
-    "ivygate": "https://github.com/kipr/ivygate#2396aca2d3976613265b3cbfd3c1de8291e5f6af",
+    "ivygate": "https://github.com/kipr/ivygate#5c8e2f56b388cfe9fa9f0b74bf0a8f4559f5a050",
     "jszip": "^3.10.1",
     "kipr-scratch": "file:dependencies/kipr-scratch/kipr-scratch",
     "minimatch": "^10.0.3",

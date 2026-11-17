@@ -6,6 +6,7 @@ import 'xterm/css/xterm.css';
 import { Terminal } from 'xterm';
 import { styled } from 'styletron-react';
 import tr from '@i18n';
+import { isDemoMode } from '../demo/demoMode';
 export interface TerminalViewPublicProps extends StyleProps, ThemeProps {
   theme: Theme;
 }
@@ -117,9 +118,11 @@ export function XTerminal({ theme }: { theme: Theme }) {
       socketRef.current = socket;
 
       // Terminal -> Server
-      term.current.onData(data => {
-        socket.send(data);
-      });
+      if (!isDemoMode) {
+        term.current.onData(data => {
+          socket.send(data);
+        });
+      }
 
       // Server -> Terminal
       socket.onmessage = (event) => {
@@ -137,6 +140,10 @@ export function XTerminal({ theme }: { theme: Theme }) {
       socket.onclose = () => {
         term.current?.writeln('\x1b[31mConnection closed\x1b[0m\n');
       };
+
+      if (isDemoMode) {
+        term.current?.writeln('\x1b[32mWombat Terminal unavailable in demo mode\x1b[0m\n');
+      }
     }
 
     return () => {
@@ -168,7 +175,7 @@ class TerminalView extends React.Component<Props, State> {
     this.state = {};
   }
   render() {
-    const { theme, locale} = this.props;
+    const { theme, locale } = this.props;
     return (
       <div style={{ height: '900px', display: 'flex', flexDirection: 'column' }}>
         <TerminalViewContainer theme={theme} className="terminal-view">

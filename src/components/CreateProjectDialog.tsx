@@ -142,15 +142,6 @@ export class CreateProjectDialog extends React.PureComponent<Props, State> {
     }
   }
 
-  componentDidMount = () => {
-    console.log("CreateProjectDialog componentDidMount props: ", this.props);
-    console.log("CreateProjectDialog componentDidMount state: ", this.state);
-  }
-
-  componentDidUpdate = (prevProps: Props, prevState: State) => {
-    console.log("CreateProjectDialog componentDidUpdate props: ", this.props);
-    console.log("CreateProjectDialog componentDidUpdate state: ", this.state);
-  }
 
   private onSelectLanguage_ = (languageIndex: number, option: ComboBox.Option) => {
     this.onLanguageChange(option.data as ProgrammingLanguage);
@@ -183,8 +174,7 @@ export class CreateProjectDialog extends React.PureComponent<Props, State> {
     }
     this.setState({ errorMessage: "" }); // Clear error message if input is valid
     try {
-      console.log("this.props.settings: ", this.props.settings);
-      console.log("CreateProjectDialog props: ", this.props);
+
       this.props.closeProjectDialog(values.projectName, this.state.language as ProgrammingLanguage, this.state.interfaceMode);
 
 

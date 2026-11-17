@@ -1,0 +1,1 @@
+export const isDemoMode = DEMO_MODE;

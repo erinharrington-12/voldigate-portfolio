@@ -156,7 +156,6 @@ class DeleteUserProjectFileDialog extends React.PureComponent<Props> {
   render() {
     const { props } = this;
     const { theme, onClose, locale } = props;
-    console.log('DeleteUserProjectFileDialog render props: ', props);
 
     return (
       <Dialog theme={theme} name={LocalizedString.lookup(tr('Are You Sure?'), locale)} onClose={onClose}>

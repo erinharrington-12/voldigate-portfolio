@@ -15,6 +15,8 @@ import { I18nAction } from '../state/reducer';
 import { connect } from 'react-redux';
 import { BLANK_USER, User } from 'ivygate/dist/src/types/user';
 import { InterfaceMode } from '../types/interfaceModes';
+import { updateDemoUserInterfaceMode } from '../demo/demoFileStorage';
+import { isDemoMode } from '../demo/demoMode';
 type SettingsSection = 'user-interface' | 'simulation' | 'editor';
 
 export interface SettingsDialogPublicProps extends ThemeProps, StyleProps {
@@ -209,7 +211,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
     super(props);
     const initialUser = Object.keys(this.props.users).length > 0 ? Object.values(this.props.users)[0] : BLANK_USER;
 
-    console.log("SettingsDialog constructor props:", props);
     this.state = {
       selectedSection: 'user-interface',
       storedTheme: localStorage.getItem('ideEditorDarkMode') === 'true' ? DARK : LIGHT,
@@ -225,12 +226,10 @@ class SettingsDialog extends React.PureComponent<Props, State> {
   }
 
   componentDidMount(): void {
-    console.log("SettingsDialog mounted state:", this.state);
 
     const storedTheme = localStorage.getItem('ideEditorDarkMode');
     const consoleLayout = localStorage.getItem('consoleLayout');
     const classroomView = localStorage.getItem('classroomView');
-    console.log("Console Layout from localStorage:", consoleLayout);
     if (consoleLayout) {
       this.props.onSettingsChange({ consoleLayout: consoleLayout as 'horizontal' | 'vertical' });
     }
@@ -241,11 +240,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
       this.props.onSettingsChange({ classroomView: classroomView === 'true' });
     }
     const usersArray = Object.values(this.props.users);
-    console.log("SettingsDialog componentDidMount usersArray:", usersArray);
-    console.log("SettingsDialog componentDidMount userOptions:", usersArray.map(user => ({
-      data: user.userName,
-      text: user.userName, // or any other field you need for ComboBox
-    })));
     this.setState({
 
       userOptions: usersArray.map(user => ({
@@ -259,10 +253,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
   }
 
   componentDidUpdate = async (prevProps: Props, prevState: State) => {
-
-    console.log("SettingsDialog updated state:", this.state);
-    console.log("SettingsDialog updated props:", this.props);
-
     if (prevProps.settings.ideEditorDarkMode !== this.props.settings.ideEditorDarkMode) {
       if (this.props.settings.ideEditorDarkMode) {
         this.setState({ storedTheme: DARK });
@@ -307,7 +297,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
   };
 
   updateUserOptions = () => {
-    console.log("SettingsDialog updateUserOptions props.users:", this.props.users);
     const userOptions: ComboBox.Option[] = Object.values(this.props.users).map(user => {
       const userName = LocalizedString.lookup(tr(`${user.userName}`), this.props.locale);
       const option = {
@@ -327,7 +316,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
 
   USER_OPTIONS: ComboBox.Option[] = (() => {
     const ret: ComboBox.Option[] = [];
-    console.log("SettingsDialog USER_OPTIONS props.users:", this.props.users);
     const usersArray = Object.values(this.props.users);
     for (const user of usersArray) {
       const userName = LocalizedString.lookup(tr(`${user.userName}`), this.props.locale);
@@ -373,7 +361,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
   };
 
   private onLocaleSelect_ = (index: number, option: ComboBox.Option) => {
-    console.log("SettingsDialog onLocaleSelect_ option:", option);
     localStorage.setItem('bblocale', option.data as string);
     this.props.onLocaleChange(option.data as LocalizedString.Language);
   };
@@ -417,6 +404,19 @@ class SettingsDialog extends React.PureComponent<Props, State> {
   };
 
   private onConfirmClick_ = async () => {
+    if (isDemoMode) {
+      updateDemoUserInterfaceMode(this.state.currentStateUser.userName, this.newInterfaceModeRef.current);
+      this.props.reloadUser();
+      this.setState({
+        confirmMessage: '',
+        successMessage: 'Interface mode changed successfully',
+        currentStateUser: {
+          ...this.state.currentStateUser,
+          interfaceMode: this.newInterfaceModeRef.current
+        }
+      })
+      return;
+    }
     const changeInterfaceResponse = await axios.post('/change-interface-mode', {
       user: this.state.selectedUser, newMode: this.newInterfaceModeRef.current
     });
@@ -440,8 +440,6 @@ class SettingsDialog extends React.PureComponent<Props, State> {
     const { selectedSection, storedTheme, userOptions, selectedUser, successMessage, currentStateUser, interfaceMode, confirmMessage } = state;
 
     const userIndex = userOptions.findIndex(option => option.text === selectedUser.userName);
-    console.log("SettingsDialog render userIndex:", userIndex);
-    console.log("SettingsDialog render state:", state);
 
     return (
       <Dialog

@@ -18,6 +18,10 @@ import ComboBox from './ComboBox';
 import { InterfaceMode } from '../types/interfaceModes';
 import { Settings } from 'Settings';
 import Classroom from 'ivygate/dist/src/types/classroomTypes';
+import { isDemoMode } from '../demo/demoMode';
+import { getDemoUsers } from '../demo/demoUsers';
+import { createDemoUser } from '../demo/demoWorkspace';
+import { Modal } from './Modal';
 
 
 export interface CreateUserDialogPublicProps extends ThemeProps, StyleProps {
@@ -129,15 +133,7 @@ export class CreateUserDialog extends React.PureComponent<Props, State> {
         }
     }
 
-    componentDidMount() {
-        console.log("CreateUserDialog componentDidMount props: ", this.props);
-        console.log("CreateUserDialog componentDidMount state: ", this.state);
-    }
 
-    componentDidUpdate = (prevProps: Props, prevState: State) => {
-        console.log("CreateUserDialog componentDidUpdate props: ", this.props);
-        console.log("CreateUserDialog componentDidUpdate state: ", this.state);
-    }
     private closeRepeatUserDialog_ = () => {
 
         this.setState({ showRepeatUserDialog: false });
@@ -151,15 +147,13 @@ export class CreateUserDialog extends React.PureComponent<Props, State> {
         this.onInterfaceChange(option.data as InterfaceMode);
     };
     private onSelectClassroom_ = (classroomIndex: number, option: ComboBox.Option) => {
-        console.log("Selected classroom: ", option);
+
         this.setState({
             classroom: {
                 name: option.text as Classroom['name'],
                 users: option.data as User[],
                 type: 'classroom'
             }
-        }, () => {
-            console.log("Updated classroom state: ", this.state);
         })
     };
     onFinalize_ = async (values: { [id: string]: string }) => {
@@ -185,8 +179,31 @@ export class CreateUserDialog extends React.PureComponent<Props, State> {
         this.setState({ errorMessage: '' }); // Clear error message if input is valid
 
         try {
+            if (isDemoMode) {
+                try {
+                    createDemoUser(userName,this.state.interfaceMode);
+
+                    const users = getDemoUsers();
+
+                    const newUser = users.find(
+                        user => user.userName === userName.trim()
+                    );
+
+                    if (!newUser) {
+                        throw new Error('New demo user was not found');
+                    }
+
+
+                } catch (error) {
+                    console.error('Failed to create demo user:', error);
+                }
+                this.props.onClose();
+                this.props.onCreateUserDialog(userName as User['userName'], this.state.interfaceMode, this.state.classroom ? this.state.classroom.name === 'No Classroom' ? { name: "", users: [], type: 'classroom' } : this.state.classroom : null);
+
+                return;
+            }
             const response = await axios.get('/get-users', { params: { filePath: '/home/kipr/Documents/KISS' } });
-            console.log("CreateUserDialog response: ", response.data);
+
             if (response.data.users.some(user => user.userName === userName)) {
                 this.setState({ showRepeatUserDialog: true });
             } else {
@@ -215,7 +232,7 @@ export class CreateUserDialog extends React.PureComponent<Props, State> {
             }
         }
 
-        console.log("CreateUserDialog CLASSROOM_OPTIONS ret: ", ret);
+
         ret.push({
             data: [],
             text: LocalizedString.lookup(tr('No Classroom'), this.props.locale)
@@ -227,18 +244,14 @@ export class CreateUserDialog extends React.PureComponent<Props, State> {
         const { props, state } = this;
         const { style, className, theme, onClose, locale, settings, classrooms, propClassroom } = props;
         const { errorMessage, interfaceMode, classroom } = state;
-        console.log("CreateUserDialog render props: ", props);
-        console.log("CreateUserDialog render state: ", state);
-
         const { showRepeatUserDialog } = state;
         const CREATEUSER_FORM_ITEMS: Form.Item[] = [
             Form.username('userName', LocalizedString.lookup(tr('User Name'), locale))
         ];
         const interfaceIndex = getInterfaceOptions(locale).findIndex(option => option.data === this.state.interfaceMode);
-        console.log("CreateUserDialog render interfaceIndex: ", interfaceIndex);
-        console.log("CreateUserDialog render classroom: ", classroom);
+
         const classroomIndex = this.CLASSROOM_OPTIONS.findIndex(option => option.text === classroom?.name);
-        console.log("CreateUserDialog render classroomIndex: ", classroomIndex);
+
 
         return (
             <div>

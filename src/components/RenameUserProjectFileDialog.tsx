@@ -15,6 +15,8 @@ import { Fa } from './Fa';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { JSX } from 'react';
 import Classroom from 'ivygate/dist/src/types/classroomTypes';
+import { isDemoMode } from '../demo/demoMode';
+import { renameDemoClassroom, renameDemoFile, renameDemoProject, renameDemoUser } from '../demo/demoFileStorage';
 
 export interface RenameUserProjectFileDialogPublicProps extends ThemeProps, StyleProps {
   user: User;
@@ -144,6 +146,11 @@ export class RenameUserProjectFileDialog extends React.PureComponent<Props, Stat
     this.setState({ errorMessage: "" }); // Clear error message if input is valid
 
     if (this.props.toRenameType === "Classroom") {
+      if(isDemoMode){
+        renameDemoClassroom(this.props.toRenameName, changedName);
+        this.props.onCloseRenameUserProjectFileDialog("Classroom", this.props.user, { classroomName: changedName });
+        return;
+      }
       try {
         const renameClassroomResponse = await axios.post('/rename', { renameType: 'Classroom', oldClassroomName: this.props.toRenameName, newClassroomName: changedName });
 
@@ -161,6 +168,12 @@ export class RenameUserProjectFileDialog extends React.PureComponent<Props, Stat
     }
     else if (this.props.toRenameType === "User") {
 
+      if(isDemoMode){
+        renameDemoUser(this.props.toRenameName, values.userName);
+        this.props.onCloseRenameUserProjectFileDialog("User", this.props.user, { userName: values.userName });
+
+        return;
+      }
       try {
         const renameUserResponse = await axios.post('/rename', { renameType: 'User', oldUserName: this.props.toRenameName, newUserName: values.userName });
 
@@ -178,6 +191,11 @@ export class RenameUserProjectFileDialog extends React.PureComponent<Props, Stat
       }
     }
     else if (this.props.toRenameType === "Project") {
+      if(isDemoMode) {
+        renameDemoProject(this.props.user.userName, this.props.toRenameName, values.projectName);
+        this.props.onCloseRenameUserProjectFileDialog("Project", this.props.user, { projectName: values.projectName });
+        return;
+      }
       try {
         const renameProjectResponse = await axios.post('/rename', { renameType: 'Project', userName: this.props.user.userName, oldProjectName: this.props.toRenameName, newProjectName: values.projectName });
         if (renameProjectResponse.request.status === 200) { //success
@@ -189,6 +207,12 @@ export class RenameUserProjectFileDialog extends React.PureComponent<Props, Stat
       }
     }
     else if (this.props.toRenameType === "File") {
+      if(isDemoMode) {
+        const [file, extension] = this.props.toRenameName.split('.');
+        renameDemoFile(this.props.user.userName, this.props.project.projectName, this.props.toRenameName, `${values.fileName}.${extension}`);
+        this.props.onCloseRenameUserProjectFileDialog("File", this.props.user, { fileName: `${values.fileName}.${extension}` });
+        return;
+      }
       try {
         const [file, extension] = this.props.toRenameName.split('.');
         const renameFileResponse = await axios.post('/rename', { renameType: 'File', userName: this.props.user.userName, projectName: this.props.project.projectName, oldFileName: this.props.toRenameName, newFileName: `${values.fileName}.${extension}` });
@@ -222,7 +246,7 @@ export class RenameUserProjectFileDialog extends React.PureComponent<Props, Stat
 
 
     let renameClassroomContent: JSX.Element;
-    console.log("RenameUserProjectFileDialog props: ", props);
+
 
     renameClassroomContent = (
       <Dialog
@@ -263,7 +287,7 @@ export class RenameUserProjectFileDialog extends React.PureComponent<Props, Stat
     );
 
     let renameUserContent: JSX.Element;
-    console.log("RenameUserProjectFileDialog props: ", props);
+  
 
     renameUserContent = (
       <Dialog

@@ -30,9 +30,9 @@ type Props = ExtraMenuPublicProps & ExtraMenuPrivateProps;
 type State = ExtraMenuState;
 const MobileContainer = styled('div', (props: ThemeProps) => ({
   position: 'absolute',
-  top: '100%',
+ // top: '100%',
   right: `0px`,
-   backgroundColor: props.theme.backgroundColor,
+  backgroundColor: props.theme.backgroundColor,
   color: props.theme.color,
   display: 'flex',
   flexDirection: 'column',
@@ -52,10 +52,11 @@ const DefaultContainer = styled('div', (props: ThemeProps) => ({
   borderBottomRightRadius: `${props.theme.borderRadius}px`,
   borderRight: `2px solid ${props.theme.borderColor}`,
   borderLeft: `2px solid ${props.theme.borderColor}`,
+  height: '100%',
 }));
 
 
-const Container = styled('div', (props: ThemeProps ) => ({
+const Container = styled('div', (props: ThemeProps) => ({
   position: 'absolute',
   backgroundColor: props.theme.titleBarBackground,
   alignContent: 'center',
@@ -99,7 +100,7 @@ const MobileItem = styled('div', (props: ThemeProps & ClickProps) => ({
   },
   userSelect: 'none',
   transition: 'background-color 0.2s, opacity 0.2s',
-    width: '100%',
+  width: '100%',
 }));
 
 const Item = styled('div', (props: ThemeProps & ClickProps) => ({
@@ -126,7 +127,7 @@ const Item = styled('div', (props: ThemeProps & ClickProps) => ({
   userSelect: 'none',
   transition: 'background-color 0.2s, opacity 0.2s',
 
-    width: '100%',
+  width: '100%',
 }));
 
 const ItemIcon = styled(Fa, {
@@ -161,17 +162,12 @@ class ExtraMenu extends React.PureComponent<Props, State> {
   }
 
   async componentDidUpdate(prevProps: Props, prevState: State) {
-    console.log('ExtraMenu componentDidUpdate props: ', this.props);
-    console.log('ExtraMenu componentDidUpdate state: ', this.state);
-    console.log('ExtraMenu componentDidUpdate prevProps: ', prevProps);
-    console.log('ExtraMenu componentDidUpdate prevState: ', prevState);
+
 
     if (this.state.screenWidth !== window.innerWidth) {
       this.setState({
         screenWidth: window.innerWidth,
         isMobile: window.innerWidth < 1030,
-      }, () => {
-        console.log('ExtraMenu componentDidUpdate new state: ', this.state);
       });
     }
   }
@@ -213,7 +209,7 @@ class ExtraMenu extends React.PureComponent<Props, State> {
     let defaultMenu: JSX.Element;
     let content: JSX.Element;
     mobileView = (
-      <MobileItem style={{justifyContent: 'center' }} theme={theme} onClick={() => this.setState({ showMobileView: !showMobileView })}>
+      <MobileItem style={{ justifyContent: 'center' }} theme={theme} onClick={() => this.setState({ showMobileView: !showMobileView })}>
         <MobileItemIcon style={{}} icon={faBars} />
       </MobileItem>
     );
@@ -232,11 +228,17 @@ class ExtraMenu extends React.PureComponent<Props, State> {
     }
 
     return (
-      <Container theme={theme} style={style} className={className}>
+      // <Container theme={theme} style={style} className={className}>
+
+      //   {content}
+      //   {showMobileView && this.renderMobileView()}
+      // </Container>
+      <div>
 
         {content}
         {showMobileView && this.renderMobileView()}
-      </Container>
+      </div>
+
     );
   }
 }

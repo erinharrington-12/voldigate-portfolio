@@ -173,11 +173,6 @@ export class HomeStartOptions extends React.Component<Props, State> {
         this.checkLayout();
         window.addEventListener('resize', this.checkLayout);
     }
-    componentDidUpdate = async (prevProps: Props, prevState: State) => {
-        console.log("HomeStartOptions componentDidUpdate state:", this.state);
-        console.log("HomeStartOptions componentDidUpdate props:", this.props);
-
-    }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.checkLayout);
