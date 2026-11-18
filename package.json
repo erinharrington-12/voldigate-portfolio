@@ -7,7 +7,7 @@
   "license": "GPL-3.0-only",
   "scripts": {
     "install": "node -e \"if (process.env.DEMO_MODE !== 'true') require('child_process').execFileSync('node-gyp', ['rebuild'], { stdio: 'inherit' })\"",
-    "build": "yarn run build-i18n && yarn run clean-dist && webpack --config=configs/webpack/prod.js",
+    "build": "python3 dependencies/build_voldigate_demo.py && yarn run build-i18n && yarn run clean-dist && webpack --config=configs/webpack/prod.js",
     "watch": "tsc --project tsconfig.convert.json && node --max-old-space-size=8192 node_modules/webpack/bin/webpack.js --watch --config=configs/webpack/dev.js",
     "clean-dist": "rm -f -r -d dist",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

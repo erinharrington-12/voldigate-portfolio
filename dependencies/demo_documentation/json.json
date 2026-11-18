@@ -1,0 +1,2491 @@
+{
+  "files": {
+    "analog_8h": {
+      "id": "analog_8h",
+      "name": "analog.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "analog_8hpp": {
+      "id": "analog_8hpp",
+      "name": "analog.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "botball_8h": {
+      "id": "botball_8h",
+      "name": "botball.h",
+      "functions": [
+        "botball_8h_1a27709aff1cbaf8ea25b672afcb8920e9",
+        "botball_8h_1a706027d852569bb8e4887c0919252150"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "button__ids_8hpp": {
+      "id": "button__ids_8hpp",
+      "name": "button_ids.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "button_8h": {
+      "id": "button_8h",
+      "name": "button.h",
+      "functions": [
+        "button_8h_1acb91c985be490a34faa6f213d063eec0"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "button_8hpp": {
+      "id": "button_8hpp",
+      "name": "button.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "color_8hpp": {
+      "id": "color_8hpp",
+      "name": "color.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "colors_8h": {
+      "id": "colors_8h",
+      "name": "colors.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "console_8hpp": {
+      "id": "console_8hpp",
+      "name": "console.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "console_8h": {
+      "id": "console_8h",
+      "name": "console.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "digital_8h": {
+      "id": "digital_8h",
+      "name": "digital.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "digital_8hpp": {
+      "id": "digital_8hpp",
+      "name": "digital.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "display_8h": {
+      "id": "display_8h",
+      "name": "display.h",
+      "functions": [
+        "display_8h_1aee07a233052bd0b8f6e461d21f380d4e",
+        "display_8h_1abbf993d2dc1de781d106a1ca2c8c484d"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "geometry_8h": {
+      "id": "geometry_8h",
+      "name": "geometry.h",
+      "functions": [
+        "geometry_8h_1ac1f6153905cf399f94735ed9e873ad99",
+        "geometry_8h_1a857eaf4c97ea5a11cc8205d88cd97e96",
+        "geometry_8h_1a16565d9e4cf25ba1a8b7efa988169fb3"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "geometry_8hpp": {
+      "id": "geometry_8hpp",
+      "name": "geometry.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "logic_8hpp": {
+      "id": "logic_8hpp",
+      "name": "logic.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "log_8hpp": {
+      "id": "log_8hpp",
+      "name": "log.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "motor_8hpp": {
+      "id": "motor_8hpp",
+      "name": "motor.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "motor_8h": {
+      "id": "motor_8h",
+      "name": "motor.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "sensor_8hpp": {
+      "id": "sensor_8hpp",
+      "name": "sensor.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "servo_8hpp": {
+      "id": "servo_8hpp",
+      "name": "servo.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "servo_8h": {
+      "id": "servo_8h",
+      "name": "servo.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "time_8h": {
+      "id": "time_8h",
+      "name": "time.h",
+      "functions": [
+        "time_8h_1af0c555a8582de02b428aa7b11735a45d",
+        "time_8h_1a74a833b476f3c37956abf6b4a0fa7989",
+        "time_8h_1a541442824a656f9c820631f4b8adf441"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "wait__for_8h": {
+      "id": "wait__for_8h",
+      "name": "wait_for.h",
+      "functions": [
+        "wait__for_8h_1a74acd89d9a666f725aaa1a476b0e365d",
+        "wait__for_8h_1a368e329006021dadff3cc5a242fa3496",
+        "wait__for_8h_1ae05810376ef3be973a565af8b7470693",
+        "wait__for_8h_1ae196d362dcc42731add42961d3af9c36",
+        "wait__for_8h_1a8385c7f8de3278ffc64481beba49ffbf",
+        "wait__for_8h_1aee3cee1ad54ff82ed8953b7f4ce593a9",
+        "wait__for_8h_1ab8c44ae16043d54ba32460e33137495c",
+        "wait__for_8h_1a8b17289ed8940e950d6accf9347e6542",
+        "wait__for_8h_1a94a83d05c1588cba3b2fa7b80e8f7ad0",
+        "wait__for_8h_1ab1c1b0de9d8cbfd8a7574b367d57f9f1",
+        "wait__for_8h_1af413b9f424f6f55b45805aa161125605",
+        "wait__for_8h_1ac1bc2051b8b966ab9e0d15a6dd6513db",
+        "wait__for_8h_1a868a70fc91aa446f8d719c6d13c5d9f2",
+        "wait__for_8h_1aa02cf2ac3023fcfb71641e45e770d17e",
+        "wait__for_8h_1abc3fd91fb30a4c67f83a8ed29685a843",
+        "wait__for_8h_1a6f2f765b38c4582e9580c3845993148b",
+        "wait__for_8h_1a4df94b781ad03619d46d30dcbf08dd5a"
+      ],
+      "modules": [],
+      "types": []
+    }
+  },
+  "functions": {
+    "botball_8h_1a27709aff1cbaf8ea25b672afcb8920e9": {
+      "id": "botball_8h_1a27709aff1cbaf8ea25b672afcb8920e9",
+      "name": "shut_down_in",
+      "parameters": [
+        {
+          "name": "s",
+          "type": "double",
+          "description": "The number of seconds to wait before the end of program"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Register an event to stop the user program after s seconds"
+    },
+    "botball_8h_1a706027d852569bb8e4887c0919252150": {
+      "id": "botball_8h_1a706027d852569bb8e4887c0919252150",
+      "name": "wait_for_light",
+      "parameters": [
+        {
+          "name": "light_port_",
+          "type": "int",
+          "description": "The analog port and light sensor to use."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Initiate a calibration and wait for light sequence which is a normal early step in Botball programs"
+    },
+    "button_8h_1acb91c985be490a34faa6f213d063eec0": {
+      "id": "button_8h_1acb91c985be490a34faa6f213d063eec0",
+      "name": "push_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the ousg button's state (pressed or not pressed.)"
+    },
+    "display_8h_1aee07a233052bd0b8f6e461d21f380d4e": {
+      "id": "display_8h_1aee07a233052bd0b8f6e461d21f380d4e",
+      "name": "display_clear",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "display_8h_1abbf993d2dc1de781d106a1ca2c8c484d": {
+      "id": "display_8h_1abbf993d2dc1de781d106a1ca2c8c484d",
+      "name": "display_printf",
+      "parameters": [
+        {
+          "name": "col",
+          "type": "int",
+          "description": null
+        },
+        {
+          "name": "row",
+          "type": "int",
+          "description": null
+        },
+        {
+          "name": "t",
+          "type": "const char *",
+          "description": null
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "geometry_8h_1ac1f6153905cf399f94735ed9e873ad99": {
+      "id": "geometry_8h_1ac1f6153905cf399f94735ed9e873ad99",
+      "name": "create_point2",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "int",
+          "description": "- the x value of the point"
+        },
+        {
+          "name": "y",
+          "type": "int",
+          "description": "- the y value of the point"
+        }
+      ],
+      "return_type": "point2",
+      "return_description": null,
+      "brief_description": "Create a point2 object.",
+      "detailed_description": ""
+    },
+    "geometry_8h_1a857eaf4c97ea5a11cc8205d88cd97e96": {
+      "id": "geometry_8h_1a857eaf4c97ea5a11cc8205d88cd97e96",
+      "name": "create_point3",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "int",
+          "description": "- the x value of the point"
+        },
+        {
+          "name": "y",
+          "type": "int",
+          "description": "- the y value of the point"
+        },
+        {
+          "name": "z",
+          "type": "int",
+          "description": "- the z value of the point"
+        }
+      ],
+      "return_type": "point3",
+      "return_description": null,
+      "brief_description": "Create a point3 object.",
+      "detailed_description": ""
+    },
+    "geometry_8h_1a16565d9e4cf25ba1a8b7efa988169fb3": {
+      "id": "geometry_8h_1a16565d9e4cf25ba1a8b7efa988169fb3",
+      "name": "create_rectangle",
+      "parameters": [
+        {
+          "name": "ulx",
+          "type": "int",
+          "description": "- the x value of the rectangle's upper left"
+        },
+        {
+          "name": "uly",
+          "type": "int",
+          "description": "- the y value of the rectangle's upper left"
+        },
+        {
+          "name": "width",
+          "type": "int",
+          "description": "- the width of the rectangle"
+        },
+        {
+          "name": "height",
+          "type": "int",
+          "description": "- the height of the rectangle"
+        }
+      ],
+      "return_type": "rectangle",
+      "return_description": null,
+      "brief_description": "Create a rectangle object.",
+      "detailed_description": ""
+    },
+    "group__analog_1gafa28db0c35c02b77341a6bed7aac0cb4": {
+      "id": "group__analog_1gafa28db0c35c02b77341a6bed7aac0cb4",
+      "name": "analog",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 5 specifying the sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the 12-bit analog value of a port."
+    },
+    "group__analog_1gab67f7af2df378fc643c9452946aa470b": {
+      "id": "group__analog_1gab67f7af2df378fc643c9452946aa470b",
+      "name": "analog8",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 5 specifying the sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the 8-bit analog value of a port."
+    },
+    "group__analog_1ga9dca569422efccf49420ebb82ce26aef": {
+      "id": "group__analog_1ga9dca569422efccf49420ebb82ce26aef",
+      "name": "analog10",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 5 specifying the sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the 10-bit analog value of a port."
+    },
+    "group__analog_1gae4df1b885eb1242e8906bbb053e4aa48": {
+      "id": "group__analog_1gae4df1b885eb1242e8906bbb053e4aa48",
+      "name": "analog12",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 5 specifying the sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the 12-bit analog value of a port."
+    },
+    "group__analog_1gac6275954d0f20882dce85bbf2a191add": {
+      "id": "group__analog_1gac6275954d0f20882dce85bbf2a191add",
+      "name": "analog_et",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 7 specifying the ET sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the 10-bit analog value of an ET sensor on the given port. Deprecateddefaulting to analog() on the Wallaby"
+    },
+    "group__analog_1gafe0e26968180cb71db2c398574b82731": {
+      "id": "group__analog_1gafe0e26968180cb71db2c398574b82731",
+      "name": "set_analog_pullup",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 5 specifying the analog sensor to read from."
+        },
+        {
+          "name": "pullup",
+          "type": "int",
+          "description": "A value of 0 (inactive) or 1 (active)."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Sets analog pullup status for one port. Deprecatedno effect on the Wallaby"
+    },
+    "group__analog_1ga0efa75659885dfd582847bfa5590d2d8": {
+      "id": "group__analog_1ga0efa75659885dfd582847bfa5590d2d8",
+      "name": "get_analog_pullup",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 7 specifying the analog sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the analog pullup status for one portt. Deprecatedno effect on the Wallaby"
+    },
+    "group__button_1gad816f48e95049f42e7ddfe83bebcf67a": {
+      "id": "group__button_1gad816f48e95049f42e7ddfe83bebcf67a",
+      "name": "set_a_button_text",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "const char *",
+          "description": "The text to display. Limit of 16 characters."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Updates the A button's text. Deprecatednot planned for the Wallaby"
+    },
+    "group__button_1ga9c70bfdf09245ab36547bdbc2cc31a7c": {
+      "id": "group__button_1ga9c70bfdf09245ab36547bdbc2cc31a7c",
+      "name": "set_b_button_text",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "const char *",
+          "description": "The text to display. Limit of 16 characters."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Updates the B button's text. Deprecatednot planned for the Wallaby"
+    },
+    "group__button_1gac41766a323aded16a6071785942d9701": {
+      "id": "group__button_1gac41766a323aded16a6071785942d9701",
+      "name": "set_c_button_text",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "const char *",
+          "description": "The text to display. Limit of 16 characters."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Updates the C button's text. Deprecatednot planned for the Wallaby"
+    },
+    "group__button_1ga5377556e42fd72d8a8512aef83708e2c": {
+      "id": "group__button_1ga5377556e42fd72d8a8512aef83708e2c",
+      "name": "set_x_button_text",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "const char *",
+          "description": "The text to display. Limit of 16 characters."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Updates the X button's text. Deprecatednot planned for the Wallaby"
+    },
+    "group__button_1ga1a56c447f8161b6b4d4af8edd5e83532": {
+      "id": "group__button_1ga1a56c447f8161b6b4d4af8edd5e83532",
+      "name": "set_y_button_text",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "const char *",
+          "description": "The text to display. Limit of 16 characters."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Updates the Y button's text. Deprecatednot planned for the Wallaby"
+    },
+    "group__button_1gadd44ccefbc0094c6256676e1b6e3ddd7": {
+      "id": "group__button_1gadd44ccefbc0094c6256676e1b6e3ddd7",
+      "name": "set_z_button_text",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "const char *",
+          "description": "The text to display. Limit of 16 characters."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Updates the Z button's text. Deprecatednot planned for the Wallaby"
+    },
+    "group__button_1gac8f47305ed4a965c87880dd9a7f89190": {
+      "id": "group__button_1gac8f47305ed4a965c87880dd9a7f89190",
+      "name": "a_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the A button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga5fc124dea4693c2e5846329107dbab1b": {
+      "id": "group__button_1ga5fc124dea4693c2e5846329107dbab1b",
+      "name": "b_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the B button's state (pressed or not pressed.)"
+    },
+    "group__button_1gab39631d7431b4bf38c8037dc741b171a": {
+      "id": "group__button_1gab39631d7431b4bf38c8037dc741b171a",
+      "name": "c_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the C button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga650c53fd8eca117e7bbece899d3efc5d": {
+      "id": "group__button_1ga650c53fd8eca117e7bbece899d3efc5d",
+      "name": "x_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the C button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga6bd72b4acad143902eb35d50a7686b58": {
+      "id": "group__button_1ga6bd72b4acad143902eb35d50a7686b58",
+      "name": "y_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the Y button's state (pressed or not pressed.)"
+    },
+    "group__button_1gaec792dc42538e698fccd11cab61d0dcf": {
+      "id": "group__button_1gaec792dc42538e698fccd11cab61d0dcf",
+      "name": "z_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the Z button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga1af4e87e29182513ca6f0a24ea27f8bb": {
+      "id": "group__button_1ga1af4e87e29182513ca6f0a24ea27f8bb",
+      "name": "side_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the side button's state (pressed or not pressed.) DeprecatedNot present on the Wallaby"
+    },
+    "group__button_1gad570b4c97c58ae8fa41ed9918f7f4b1a": {
+      "id": "group__button_1gad570b4c97c58ae8fa41ed9918f7f4b1a",
+      "name": "black_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the black button's state (pressed or not pressed.) DeprecatedNot present on the Wallaby"
+    },
+    "group__button_1ga34eaae0b8960db57c37e35eecc891b6c": {
+      "id": "group__button_1ga34eaae0b8960db57c37e35eecc891b6c",
+      "name": "left_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the left button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga22b4859d4454499466dea2293d109d6d": {
+      "id": "group__button_1ga22b4859d4454499466dea2293d109d6d",
+      "name": "right_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the right button's state (pressed or not pressed.)"
+    },
+    "group__button_1gab294a96f14661b2d454d4514b9d81683": {
+      "id": "group__button_1gab294a96f14661b2d454d4514b9d81683",
+      "name": "a_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the A button's state (pressed or not pressed.)"
+    },
+    "group__button_1gad9954c57134f07035f81c03274472f9c": {
+      "id": "group__button_1gad9954c57134f07035f81c03274472f9c",
+      "name": "b_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the A button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga5d9b1aeebef7e414072dd9d7c1197520": {
+      "id": "group__button_1ga5d9b1aeebef7e414072dd9d7c1197520",
+      "name": "c_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the B button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga0f39976525759a3a341a1d8ec0f22ec6": {
+      "id": "group__button_1ga0f39976525759a3a341a1d8ec0f22ec6",
+      "name": "x_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the C button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga583c9e4603220a934d47667dca1decc3": {
+      "id": "group__button_1ga583c9e4603220a934d47667dca1decc3",
+      "name": "y_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the X button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga5fd7315c64006429bab9dd9e67cc61a3": {
+      "id": "group__button_1ga5fd7315c64006429bab9dd9e67cc61a3",
+      "name": "z_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the Y button's state (pressed or not pressed.)"
+    },
+    "group__button_1gae54db2cf4e21fa70c09d571448b66f8a": {
+      "id": "group__button_1gae54db2cf4e21fa70c09d571448b66f8a",
+      "name": "side_button_clicked",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the Z button's state (pressed or not pressed.)"
+    },
+    "group__button_1ga59eb1136cc828a812a368d4cf9a30c09": {
+      "id": "group__button_1ga59eb1136cc828a812a368d4cf9a30c09",
+      "name": "any_button",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Determines whether or not any of the buttons are pressed."
+    },
+    "group__button_1gaf817d3b9e670746da2d171bd0065f2a6": {
+      "id": "group__button_1gaf817d3b9e670746da2d171bd0065f2a6",
+      "name": "extra_buttons_show",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Shows the X, Y, and Z buttons."
+    },
+    "group__button_1gaefa6dc45e14284cb813eddd89e2f759b": {
+      "id": "group__button_1gaefa6dc45e14284cb813eddd89e2f759b",
+      "name": "extra_buttons_hide",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Hides the X, Y, and Z buttons. This is the default."
+    },
+    "group__button_1ga0ba2508dd7683d9bf0848f7491a374b8": {
+      "id": "group__button_1ga0ba2508dd7683d9bf0848f7491a374b8",
+      "name": "get_extra_buttons_visible",
+      "parameters": [],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Determines whether or not the X, Y, and Z buttons are visible."
+    },
+    "group__button_1ga50d7d9d062e1067abb7444d9931a1e79": {
+      "id": "group__button_1ga50d7d9d062e1067abb7444d9931a1e79",
+      "name": "set_extra_buttons_visible",
+      "parameters": [
+        {
+          "name": "visible",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Sets whether or not the X, Y, and Z buttons are visible."
+    },
+    "group__console_1ga490370bb141fb9d46cafb20abdf77e65": {
+      "id": "group__console_1ga490370bb141fb9d46cafb20abdf77e65",
+      "name": "console_clear",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Clears the UI's console."
+    },
+    "group__digital_1ga3eb7db79d996b92f7063b65dc34b3484": {
+      "id": "group__digital_1ga3eb7db79d996b92f7063b65dc34b3484",
+      "name": "digital",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "group__digital_1ga1e12c564407ca4edc4c833ddb9f0344f": {
+      "id": "group__digital_1ga1e12c564407ca4edc4c833ddb9f0344f",
+      "name": "set_digital_value",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": null
+        },
+        {
+          "name": "value",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Sets the value of the digital port in output mode."
+    },
+    "group__digital_1ga4b672bd3758b1ff255b0bc51d6c9fd76": {
+      "id": "group__digital_1ga4b672bd3758b1ff255b0bc51d6c9fd76",
+      "name": "get_digital_value",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the current value of the digital port."
+    },
+    "group__digital_1gac6aacd543334547b664ff839888bfbe2": {
+      "id": "group__digital_1gac6aacd543334547b664ff839888bfbe2",
+      "name": "set_digital_output",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port to modify."
+        },
+        {
+          "name": "out",
+          "type": "int",
+          "description": "1 for output mode, 0 for input mode."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Sets the digital mode."
+    },
+    "group__digital_1ga865e9d1807739ddc9585c5665de1281c": {
+      "id": "group__digital_1ga865e9d1807739ddc9585c5665de1281c",
+      "name": "get_digital_output",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the current digital mode"
+    },
+    "group__digital_1ga2d37bb1981515925418bd5a624eb1aa6": {
+      "id": "group__digital_1ga2d37bb1981515925418bd5a624eb1aa6",
+      "name": "get_digital_pullup",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the current digital pullup state Deprecatednot applicable on the Wallaby"
+    },
+    "group__digital_1ga6f4483ed1b9532f7637d79255107d2e9": {
+      "id": "group__digital_1ga6f4483ed1b9532f7637d79255107d2e9",
+      "name": "set_digital_pullup",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port to modify"
+        },
+        {
+          "name": "pullup",
+          "type": "int",
+          "description": "The pullup state 1: active 0: inactive"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Sets the current digital pullup state Deprecatednot applicable on the Wallaby"
+    },
+    "group__motor_1ga5713dda57d3628366a0ee6fd5057400d": {
+      "id": "group__motor_1ga5713dda57d3628366a0ee6fd5057400d",
+      "name": "get_motor_position_counter",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Gets the current motor position.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga4b767e80b3b1723b6720dd016cc1be1b": {
+      "id": "group__motor_1ga4b767e80b3b1723b6720dd016cc1be1b",
+      "name": "gmpc",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Gets the current motor position.",
+      "detailed_description": ""
+    },
+    "group__motor_1gab445096e12260140b6c0afc26d26b325": {
+      "id": "group__motor_1gab445096e12260140b6c0afc26d26b325",
+      "name": "clear_motor_position_counter",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Clears the motor position counter.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga3f000f325222eb01b69844290a654795": {
+      "id": "group__motor_1ga3f000f325222eb01b69844290a654795",
+      "name": "cmpc",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Clears the motor position counter.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga0e71753d12baa58e6093b9afd1e5fd7e": {
+      "id": "group__motor_1ga0e71753d12baa58e6093b9afd1e5fd7e",
+      "name": "move_at_velocity",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "velocity",
+          "type": "int",
+          "description": "The goal velocity in -1500 to 1500 ticks / second"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal velocity in ticks per second.",
+      "detailed_description": "The range is -1500 to 1500, though motor position accuracy may be decreased outside of -1000 to 1000"
+    },
+    "group__motor_1gabd36f01986c363f70d86c7a768ae1348": {
+      "id": "group__motor_1gabd36f01986c363f70d86c7a768ae1348",
+      "name": "mav",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "velocity",
+          "type": "int",
+          "description": "The goal velocity in -1500 to 1500 ticks / second"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal velocity in ticks per second.",
+      "detailed_description": ""
+    },
+    "group__motor_1gafce5cf37833e487343ece5256fe66d37": {
+      "id": "group__motor_1gafce5cf37833e487343ece5256fe66d37",
+      "name": "move_to_position",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "speed",
+          "type": "int",
+          "description": "The speed to move at, between -1500 and 1500 ticks / second"
+        },
+        {
+          "name": "goal_pos",
+          "type": "int",
+          "description": "The position to move to (in ticks)"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal position (in ticks) for the motor to move to.",
+      "detailed_description": "There are approximately 1500 ticks per motor revolution.This function is more accurate if speeds between -1000 and 1000 are used."
+    },
+    "group__motor_1gafa2041480c9157d97c9c5845f775e5a7": {
+      "id": "group__motor_1gafa2041480c9157d97c9c5845f775e5a7",
+      "name": "mtp",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "speed",
+          "type": "int",
+          "description": "The speed to move at, between -1500 and 1500 ticks / second"
+        },
+        {
+          "name": "goal_pos",
+          "type": "int",
+          "description": "The position to move to (in ticks)"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal position (in ticks) for the motor to move to.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga318f1b33ee4a41f44e10075a1ad0a90e": {
+      "id": "group__motor_1ga318f1b33ee4a41f44e10075a1ad0a90e",
+      "name": "move_relative_position",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "speed",
+          "type": "int",
+          "description": "The speed to move at, between -1500 and 1500 ticks / second"
+        },
+        {
+          "name": "delta_pos",
+          "type": "int",
+          "description": "The position to move to (in ticks) given the current position"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal position (in ticks) for the motor to move to, relative to the current position.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga69b3d9b619cc00953a0b522dcac43771": {
+      "id": "group__motor_1ga69b3d9b619cc00953a0b522dcac43771",
+      "name": "mrp",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "speed",
+          "type": "int",
+          "description": "The speed to move at, between -1500 and 1500 ticks / second"
+        },
+        {
+          "name": "delta_pos",
+          "type": "int",
+          "description": "The position to move to (in ticks) given the current position"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal position (in ticks) for the motor to move to, relative to the current position.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga5ead4ef2e36ce78e8b247c54cc3418b0": {
+      "id": "group__motor_1ga5ead4ef2e36ce78e8b247c54cc3418b0",
+      "name": "set_pid_gains",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "p",
+          "type": "short",
+          "description": "The P (proportional) gain numerator"
+        },
+        {
+          "name": "i",
+          "type": "short",
+          "description": "The I (integral) gain numerator"
+        },
+        {
+          "name": "d",
+          "type": "short",
+          "description": "The D (derivative) gain numerator"
+        },
+        {
+          "name": "pd",
+          "type": "short",
+          "description": "The P (proportional) gain denominator"
+        },
+        {
+          "name": "id",
+          "type": "short",
+          "description": "The I (integral) gain denominator"
+        },
+        {
+          "name": "dd",
+          "type": "short",
+          "description": "The D (derivative) gain denominator"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Set the motor PID gains, represented as fractions.",
+      "detailed_description": ""
+    },
+    "group__motor_1gab9dd99269c7f3584ca6f1277150f55f9": {
+      "id": "group__motor_1gab9dd99269c7f3584ca6f1277150f55f9",
+      "name": "get_pid_gains",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "p",
+          "type": "short *",
+          "description": "The P (proportional) gain numerator"
+        },
+        {
+          "name": "i",
+          "type": "short *",
+          "description": "The I (integral) gain numerator"
+        },
+        {
+          "name": "d",
+          "type": "short *",
+          "description": "The D (derivative) gain numerator"
+        },
+        {
+          "name": "pd",
+          "type": "short *",
+          "description": "The P (proportional) gain denominator"
+        },
+        {
+          "name": "id",
+          "type": "short *",
+          "description": "The I (integral) gain denominator"
+        },
+        {
+          "name": "dd",
+          "type": "short *",
+          "description": "The D (derivative) gain denominator"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Set the motor PID gains, represented as fractions.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga50d36bdfccc143992c8ab51689536ecc": {
+      "id": "group__motor_1ga50d36bdfccc143992c8ab51689536ecc",
+      "name": "freeze",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Active braking to stop a motor.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga242bcc237071dae3d5ee47107db7780d": {
+      "id": "group__motor_1ga242bcc237071dae3d5ee47107db7780d",
+      "name": "get_motor_done",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Check if the motor has reached it's goal.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga51c44577ae12ad636e27a94899f73a11": {
+      "id": "group__motor_1ga51c44577ae12ad636e27a94899f73a11",
+      "name": "block_motor_done",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Wait until the motor is at it's goal.",
+      "detailed_description": ""
+    },
+    "group__motor_1gab9c5212ebf04366ae991deb14b570c58": {
+      "id": "group__motor_1gab9c5212ebf04366ae991deb14b570c58",
+      "name": "bmd",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Wait until the motor is at it's goal.",
+      "detailed_description": ""
+    },
+    "group__motor_1gaf5ff331a2b0412db0b18c7e067bd29ef": {
+      "id": "group__motor_1gaf5ff331a2b0412db0b18c7e067bd29ef",
+      "name": "setpwm",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "pwm",
+          "type": "int",
+          "description": "A new motor pwm command between 0 and 100"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set the motor pwm (percent power) command.",
+      "detailed_description": ""
+    },
+    "group__motor_1gadd2d621ff37f83feee815eb5a398b10a": {
+      "id": "group__motor_1gadd2d621ff37f83feee815eb5a398b10a",
+      "name": "getpwm",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Get the current motor pwm command.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga55a302772158e1f15f1c90992f535272": {
+      "id": "group__motor_1ga55a302772158e1f15f1c90992f535272",
+      "name": "fd",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "the motor's port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Moves the given motor forward at full power.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga3f5edef0489aca523a64a40e8fe16320": {
+      "id": "group__motor_1ga3f5edef0489aca523a64a40e8fe16320",
+      "name": "bk",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "the motor's port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Moves the given motor backward at full power.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga046127adcac7487b0bbaf0b1ee1d492b": {
+      "id": "group__motor_1ga046127adcac7487b0bbaf0b1ee1d492b",
+      "name": "motor",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "percent",
+          "type": "int",
+          "description": "The percent of the motors velocity, between -100 and 100."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Moves a motor at a percent velocity.",
+      "detailed_description": ""
+    },
+    "group__motor_1gabe90111c4e73d8fc98c752bb13391cb8": {
+      "id": "group__motor_1gabe90111c4e73d8fc98c752bb13391cb8",
+      "name": "baasbennaguui",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "percent",
+          "type": "int",
+          "description": "The percent of the motors velocity, between -100 and 100."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Moves a motor at a percent velocity.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga6711550d798f1d8ef279d08fab571b5e": {
+      "id": "group__motor_1ga6711550d798f1d8ef279d08fab571b5e",
+      "name": "motor_power",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "the motor port."
+        },
+        {
+          "name": "percent",
+          "type": "int",
+          "description": "The power of the motor, between -100 and 100."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Moves a motor at a percent power.",
+      "detailed_description": ""
+    },
+    "group__motor_1gab32a8ae225a031b09e355e0813bec06f": {
+      "id": "group__motor_1gab32a8ae225a031b09e355e0813bec06f",
+      "name": "off",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "the motor's port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Turns the specified motor off.",
+      "detailed_description": ""
+    },
+    "group__motor_1gad6cb702751d048f67025d99608424796": {
+      "id": "group__motor_1gad6cb702751d048f67025d99608424796",
+      "name": "alloff",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Turns all motors off.",
+      "detailed_description": ""
+    },
+    "group__motor_1gae640dbf28bc931da0ff9d2369066c641": {
+      "id": "group__motor_1gae640dbf28bc931da0ff9d2369066c641",
+      "name": "ao",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Turns all motors off.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga74414a627ba987f929cb23de9173b056": {
+      "id": "group__servo_1ga74414a627ba987f929cb23de9173b056",
+      "name": "enable_servo",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port, between 0 and 3, to enable"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Enable a specific servo.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga04ea4f9bce0b434d3cc2f41fcda99c14": {
+      "id": "group__servo_1ga04ea4f9bce0b434d3cc2f41fcda99c14",
+      "name": "disable_servo",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port, between 0 and 3, to disable"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Disable a specific servo.",
+      "detailed_description": ""
+    },
+    "group__servo_1gad82d46ae912a2a0de1f942ce7e10bfbf": {
+      "id": "group__servo_1gad82d46ae912a2a0de1f942ce7e10bfbf",
+      "name": "enable_servos",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Enable all four servo channels.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga93b41914541860f719247c1f14a601ed": {
+      "id": "group__servo_1ga93b41914541860f719247c1f14a601ed",
+      "name": "disable_servos",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Disable all four servo channels.",
+      "detailed_description": ""
+    },
+    "group__servo_1gaa8cb86f109b7d1eb497c90f0386eee9a": {
+      "id": "group__servo_1gaa8cb86f109b7d1eb497c90f0386eee9a",
+      "name": "set_servo_enabled",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port, between 0 and 3, to enable"
+        },
+        {
+          "name": "enabled",
+          "type": "int",
+          "description": "The new enable setting 0: disabled 1: enabled"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Enable or disable a specific servo.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga63f2d035ad976f13423d3e046d456967": {
+      "id": "group__servo_1ga63f2d035ad976f13423d3e046d456967",
+      "name": "get_servo_enabled",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port, between 0 and 3"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Check if a servo is enabled.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga7576c77d711e981259a7d67e4e304155": {
+      "id": "group__servo_1ga7576c77d711e981259a7d67e4e304155",
+      "name": "get_servo_position",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port of the servo"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Get the most recent commanded servo position.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga7bd7903bca70212767182ff077b0b89f": {
+      "id": "group__servo_1ga7bd7903bca70212767182ff077b0b89f",
+      "name": "set_servo_position",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port of the servo"
+        },
+        {
+          "name": "position",
+          "type": "int",
+          "description": "The new servo position, between 0 and 2047"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Set a new servo goal position.",
+      "detailed_description": ""
+    },
+    "time_8h_1af0c555a8582de02b428aa7b11735a45d": {
+      "id": "time_8h_1af0c555a8582de02b428aa7b11735a45d",
+      "name": "msleep",
+      "parameters": [
+        {
+          "name": "msecs",
+          "type": "long",
+          "description": null
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "time_8h_1a74a833b476f3c37956abf6b4a0fa7989": {
+      "id": "time_8h_1a74a833b476f3c37956abf6b4a0fa7989",
+      "name": "systime",
+      "parameters": [],
+      "return_type": "unsigned long",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "time_8h_1a541442824a656f9c820631f4b8adf441": {
+      "id": "time_8h_1a541442824a656f9c820631f4b8adf441",
+      "name": "seconds",
+      "parameters": [],
+      "return_type": "double",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "wait__for_8h_1a74acd89d9a666f725aaa1a476b0e365d": {
+      "id": "wait__for_8h_1a74acd89d9a666f725aaa1a476b0e365d",
+      "name": "wait_for_milliseconds",
+      "parameters": [
+        {
+          "name": "msecs",
+          "type": "long",
+          "description": "the number of milliseconds to sleep"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) for the given number of milliseconds."
+    },
+    "wait__for_8h_1a368e329006021dadff3cc5a242fa3496": {
+      "id": "wait__for_8h_1a368e329006021dadff3cc5a242fa3496",
+      "name": "wait_for_touch",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port to wait for activation on"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the digital sensor on the given port has been activated."
+    },
+    "wait__for_8h_1ae05810376ef3be973a565af8b7470693": {
+      "id": "wait__for_8h_1ae05810376ef3be973a565af8b7470693",
+      "name": "wait_for_a_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the a button has been pressed."
+    },
+    "wait__for_8h_1ae196d362dcc42731add42961d3af9c36": {
+      "id": "wait__for_8h_1ae196d362dcc42731add42961d3af9c36",
+      "name": "wait_for_b_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the b button has been pressed."
+    },
+    "wait__for_8h_1a8385c7f8de3278ffc64481beba49ffbf": {
+      "id": "wait__for_8h_1a8385c7f8de3278ffc64481beba49ffbf",
+      "name": "wait_for_c_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the c button has been pressed."
+    },
+    "wait__for_8h_1aee3cee1ad54ff82ed8953b7f4ce593a9": {
+      "id": "wait__for_8h_1aee3cee1ad54ff82ed8953b7f4ce593a9",
+      "name": "wait_for_x_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the x button has been pressed."
+    },
+    "wait__for_8h_1ab8c44ae16043d54ba32460e33137495c": {
+      "id": "wait__for_8h_1ab8c44ae16043d54ba32460e33137495c",
+      "name": "wait_for_y_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the y button has been pressed."
+    },
+    "wait__for_8h_1a8b17289ed8940e950d6accf9347e6542": {
+      "id": "wait__for_8h_1a8b17289ed8940e950d6accf9347e6542",
+      "name": "wait_for_z_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the z button has been pressed."
+    },
+    "wait__for_8h_1a94a83d05c1588cba3b2fa7b80e8f7ad0": {
+      "id": "wait__for_8h_1a94a83d05c1588cba3b2fa7b80e8f7ad0",
+      "name": "wait_for_side_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the side button has been pressed."
+    },
+    "wait__for_8h_1ab1c1b0de9d8cbfd8a7574b367d57f9f1": {
+      "id": "wait__for_8h_1ab1c1b0de9d8cbfd8a7574b367d57f9f1",
+      "name": "wait_for_any_button",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until any system button has been pressed."
+    },
+    "wait__for_8h_1af413b9f424f6f55b45805aa161125605": {
+      "id": "wait__for_8h_1af413b9f424f6f55b45805aa161125605",
+      "name": "wait_for_a_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the a button has been pressed and then subsequently released."
+    },
+    "wait__for_8h_1ac1bc2051b8b966ab9e0d15a6dd6513db": {
+      "id": "wait__for_8h_1ac1bc2051b8b966ab9e0d15a6dd6513db",
+      "name": "wait_for_b_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the b button has been pressed and then subsequently released."
+    },
+    "wait__for_8h_1a868a70fc91aa446f8d719c6d13c5d9f2": {
+      "id": "wait__for_8h_1a868a70fc91aa446f8d719c6d13c5d9f2",
+      "name": "wait_for_c_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the c button has been pressed and then subsequently released."
+    },
+    "wait__for_8h_1aa02cf2ac3023fcfb71641e45e770d17e": {
+      "id": "wait__for_8h_1aa02cf2ac3023fcfb71641e45e770d17e",
+      "name": "wait_for_x_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the x button has been pressed and then subsequently released."
+    },
+    "wait__for_8h_1abc3fd91fb30a4c67f83a8ed29685a843": {
+      "id": "wait__for_8h_1abc3fd91fb30a4c67f83a8ed29685a843",
+      "name": "wait_for_y_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the y button has been pressed and then subsequently released."
+    },
+    "wait__for_8h_1a6f2f765b38c4582e9580c3845993148b": {
+      "id": "wait__for_8h_1a6f2f765b38c4582e9580c3845993148b",
+      "name": "wait_for_z_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the z button has been pressed and then subsequently released."
+    },
+    "wait__for_8h_1a4df94b781ad03619d46d30dcbf08dd5a": {
+      "id": "wait__for_8h_1a4df94b781ad03619d46d30dcbf08dd5a",
+      "name": "wait_for_side_button_clicked",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Waits (blocks) until the side button has been pressed and then subsequently released."
+    }
+  },
+  "modules": {
+    "group__analog": {
+      "id": "group__analog",
+      "name": "analog",
+      "functions": [
+        "group__analog_1gafa28db0c35c02b77341a6bed7aac0cb4",
+        "group__analog_1gab67f7af2df378fc643c9452946aa470b",
+        "group__analog_1ga9dca569422efccf49420ebb82ce26aef",
+        "group__analog_1gae4df1b885eb1242e8906bbb053e4aa48",
+        "group__analog_1gac6275954d0f20882dce85bbf2a191add",
+        "group__analog_1gafe0e26968180cb71db2c398574b82731",
+        "group__analog_1ga0efa75659885dfd582847bfa5590d2d8"
+      ],
+      "types": []
+    },
+    "group__button": {
+      "id": "group__button",
+      "name": "button",
+      "functions": [
+        "group__button_1gad816f48e95049f42e7ddfe83bebcf67a",
+        "group__button_1ga9c70bfdf09245ab36547bdbc2cc31a7c",
+        "group__button_1gac41766a323aded16a6071785942d9701",
+        "group__button_1ga5377556e42fd72d8a8512aef83708e2c",
+        "group__button_1ga1a56c447f8161b6b4d4af8edd5e83532",
+        "group__button_1gadd44ccefbc0094c6256676e1b6e3ddd7",
+        "group__button_1gac8f47305ed4a965c87880dd9a7f89190",
+        "group__button_1ga5fc124dea4693c2e5846329107dbab1b",
+        "group__button_1gab39631d7431b4bf38c8037dc741b171a",
+        "group__button_1ga650c53fd8eca117e7bbece899d3efc5d",
+        "group__button_1ga6bd72b4acad143902eb35d50a7686b58",
+        "group__button_1gaec792dc42538e698fccd11cab61d0dcf",
+        "group__button_1ga1af4e87e29182513ca6f0a24ea27f8bb",
+        "group__button_1gad570b4c97c58ae8fa41ed9918f7f4b1a",
+        "group__button_1ga34eaae0b8960db57c37e35eecc891b6c",
+        "group__button_1ga22b4859d4454499466dea2293d109d6d",
+        "group__button_1gab294a96f14661b2d454d4514b9d81683",
+        "group__button_1gad9954c57134f07035f81c03274472f9c",
+        "group__button_1ga5d9b1aeebef7e414072dd9d7c1197520",
+        "group__button_1ga0f39976525759a3a341a1d8ec0f22ec6",
+        "group__button_1ga583c9e4603220a934d47667dca1decc3",
+        "group__button_1ga5fd7315c64006429bab9dd9e67cc61a3",
+        "group__button_1gae54db2cf4e21fa70c09d571448b66f8a",
+        "group__button_1ga59eb1136cc828a812a368d4cf9a30c09",
+        "group__button_1gaf817d3b9e670746da2d171bd0065f2a6",
+        "group__button_1gaefa6dc45e14284cb813eddd89e2f759b",
+        "group__button_1ga0ba2508dd7683d9bf0848f7491a374b8",
+        "group__button_1ga50d7d9d062e1067abb7444d9931a1e79"
+      ],
+      "types": []
+    },
+    "group__console": {
+      "id": "group__console",
+      "name": "console",
+      "functions": [
+        "group__console_1ga490370bb141fb9d46cafb20abdf77e65"
+      ],
+      "types": []
+    },
+    "group__digital": {
+      "id": "group__digital",
+      "name": "digital",
+      "functions": [
+        "group__digital_1ga3eb7db79d996b92f7063b65dc34b3484",
+        "group__digital_1ga1e12c564407ca4edc4c833ddb9f0344f",
+        "group__digital_1ga4b672bd3758b1ff255b0bc51d6c9fd76",
+        "group__digital_1gac6aacd543334547b664ff839888bfbe2",
+        "group__digital_1ga865e9d1807739ddc9585c5665de1281c",
+        "group__digital_1ga2d37bb1981515925418bd5a624eb1aa6",
+        "group__digital_1ga6f4483ed1b9532f7637d79255107d2e9"
+      ],
+      "types": []
+    },
+    "group__motor": {
+      "id": "group__motor",
+      "name": "motor",
+      "functions": [
+        "group__motor_1ga5713dda57d3628366a0ee6fd5057400d",
+        "group__motor_1ga4b767e80b3b1723b6720dd016cc1be1b",
+        "group__motor_1gab445096e12260140b6c0afc26d26b325",
+        "group__motor_1ga3f000f325222eb01b69844290a654795",
+        "group__motor_1ga0e71753d12baa58e6093b9afd1e5fd7e",
+        "group__motor_1gabd36f01986c363f70d86c7a768ae1348",
+        "group__motor_1gafce5cf37833e487343ece5256fe66d37",
+        "group__motor_1gafa2041480c9157d97c9c5845f775e5a7",
+        "group__motor_1ga318f1b33ee4a41f44e10075a1ad0a90e",
+        "group__motor_1ga69b3d9b619cc00953a0b522dcac43771",
+        "group__motor_1ga5ead4ef2e36ce78e8b247c54cc3418b0",
+        "group__motor_1gab9dd99269c7f3584ca6f1277150f55f9",
+        "group__motor_1ga50d36bdfccc143992c8ab51689536ecc",
+        "group__motor_1ga242bcc237071dae3d5ee47107db7780d",
+        "group__motor_1ga51c44577ae12ad636e27a94899f73a11",
+        "group__motor_1gab9c5212ebf04366ae991deb14b570c58",
+        "group__motor_1gaf5ff331a2b0412db0b18c7e067bd29ef",
+        "group__motor_1gadd2d621ff37f83feee815eb5a398b10a",
+        "group__motor_1ga55a302772158e1f15f1c90992f535272",
+        "group__motor_1ga3f5edef0489aca523a64a40e8fe16320",
+        "group__motor_1ga046127adcac7487b0bbaf0b1ee1d492b",
+        "group__motor_1gabe90111c4e73d8fc98c752bb13391cb8",
+        "group__motor_1ga6711550d798f1d8ef279d08fab571b5e",
+        "group__motor_1gab32a8ae225a031b09e355e0813bec06f",
+        "group__motor_1gad6cb702751d048f67025d99608424796",
+        "group__motor_1gae640dbf28bc931da0ff9d2369066c641"
+      ],
+      "types": []
+    },
+    "group__servo": {
+      "id": "group__servo",
+      "name": "servo",
+      "functions": [
+        "group__servo_1ga74414a627ba987f929cb23de9173b056",
+        "group__servo_1ga04ea4f9bce0b434d3cc2f41fcda99c14",
+        "group__servo_1gad82d46ae912a2a0de1f942ce7e10bfbf",
+        "group__servo_1ga93b41914541860f719247c1f14a601ed",
+        "group__servo_1gaa8cb86f109b7d1eb497c90f0386eee9a",
+        "group__servo_1ga63f2d035ad976f13423d3e046d456967",
+        "group__servo_1ga7576c77d711e981259a7d67e4e304155",
+        "group__servo_1ga7bd7903bca70212767182ff077b0b89f"
+      ],
+      "types": []
+    }
+  },
+  "structures": {
+    "kipr::create::CreatePackets::_4": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__4",
+      "name": "kipr::create::CreatePackets::_4",
+      "members": [
+        {
+          "name": "wallSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffLeftSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffFrontLeftSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffFrontRightSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffRightSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "userDigitalInputs",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "userAnalogInput",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "chargingSourcesAvailable",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Create OI Packet 4"
+    },
+    "rectangle": {
+      "id": "structrectangle",
+      "name": "rectangle",
+      "members": [
+        {
+          "name": "ulx",
+          "type": "int",
+          "brief_description": "the x value of the rectangle's upper left",
+          "detailed_description": ""
+        },
+        {
+          "name": "uly",
+          "type": "int",
+          "brief_description": "the y value of the rectangle's upper left",
+          "detailed_description": ""
+        },
+        {
+          "name": "width",
+          "type": "int",
+          "brief_description": "the width of the rectangle",
+          "detailed_description": ""
+        },
+        {
+          "name": "height",
+          "type": "int",
+          "brief_description": "the height of the rectangle",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "A rectangle object.",
+      "detailed_description": ""
+    },
+    "mutex": {
+      "id": "structmutex",
+      "name": "mutex",
+      "members": [
+        {
+          "name": "data",
+          "type": "void *",
+          "brief_description": "a C++ Mutex object cast to a void*. Not intended to be accessed.",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "A mutex, or lock.",
+      "detailed_description": "mutexes are used to prevent memory errors when two programs or threads need to access the same variable."
+    },
+    "kipr::create::CreatePackets::_101": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__101",
+      "name": "kipr::create::CreatePackets::_101",
+      "members": [
+        {
+          "name": "leftEncoderCounts",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "rightEncoderCounts",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpBits",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpLeftSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpFrontLeftSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpCenterLeftSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpCenterRightSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpFrontRightSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lightBumpRightSignal",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "leftMotorCurrent",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "rightMotorCurrent",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "mainBrushMotorCurrent",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "sideBrushMotorCurrent",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "stasis",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Create OI Packet 101"
+    },
+    "point3": {
+      "id": "structpoint3",
+      "name": "point3",
+      "members": [
+        {
+          "name": "x",
+          "type": "int",
+          "brief_description": "the x value of the point",
+          "detailed_description": ""
+        },
+        {
+          "name": "y",
+          "type": "int",
+          "brief_description": "the y value of the point",
+          "detailed_description": ""
+        },
+        {
+          "name": "z",
+          "type": "int",
+          "brief_description": "the z value of the point",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "A 3D point; has x, y, and z.",
+      "detailed_description": ""
+    },
+    "kipr::create::CreatePackets::_5": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__5",
+      "name": "kipr::create::CreatePackets::_5",
+      "members": [
+        {
+          "name": "mode",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "songNumber",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "songPlaying",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "numberOfStreamPackets",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "velocity",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "radius",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "rightVelocity",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "leftVelocity",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Create OI Packet 5"
+    },
+    "kipr::log::Flush": {
+      "id": "structkipr_1_1log_1_1Flush",
+      "name": "kipr::log::Flush",
+      "members": [],
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "point2": {
+      "id": "structpoint2",
+      "name": "point2",
+      "members": [
+        {
+          "name": "x",
+          "type": "int",
+          "brief_description": "the x value of the point",
+          "detailed_description": ""
+        },
+        {
+          "name": "y",
+          "type": "int",
+          "brief_description": "the y value of the point",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "A 2D point; has x and y.",
+      "detailed_description": ""
+    },
+    "std::hash< kipr::log::Level >": {
+      "id": "structstd_1_1hash_3_01kipr_1_1log_1_1Level_01_4",
+      "name": "std::hash< kipr::log::Level >",
+      "members": [],
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "kipr::create::CreateState": {
+      "id": "structkipr_1_1create_1_1CreateState",
+      "name": "kipr::create::CreateState",
+      "members": [
+        {
+          "name": "timestamp",
+          "type": "timeval",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "distance",
+          "type": "int",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "angle",
+          "type": "int",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "radius",
+          "type": "short",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "rightVelocity",
+          "type": "short",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "leftVelocity",
+          "type": "short",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Locally stored state information"
+    },
+    "kipr::log::Location": {
+      "id": "structkipr_1_1log_1_1Location",
+      "name": "kipr::log::Location",
+      "members": [
+        {
+          "name": "file",
+          "type": "std::string",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "line",
+          "type": "unsigned",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "column",
+          "type": "unsigned",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "kipr::create::CreatePackets::_1": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__1",
+      "name": "kipr::create::CreatePackets::_1",
+      "members": [
+        {
+          "name": "bumpsAndWheelDrops",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "wall",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffLeft",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffFrontLeft",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffFrontRight",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cliffRight",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "virtualWall",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "cargoBayDigitalInputs",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "lowSideDriverAndWheelOvercurrents",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Create OI Packet 1"
+    },
+    "thread": {
+      "id": "structthread",
+      "name": "thread",
+      "members": [
+        {
+          "name": "data",
+          "type": "void *",
+          "brief_description": "a C++ Thread object cast to a void*. Not intended to be accessed.",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "A thread, or separate process.",
+      "detailed_description": "a thread runs a function \"in the background\" (while another function is executing)."
+    },
+    "Hsv": {
+      "id": "structHsv",
+      "name": "Hsv",
+      "members": [
+        {
+          "name": "h",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "s",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "v",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "kipr::create::CreatePackets::_2": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__2",
+      "name": "kipr::create::CreatePackets::_2",
+      "members": [
+        {
+          "name": "ir",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "buttons",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "distance",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "angle",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Create OI Packet 2"
+    },
+    "Rgb": {
+      "id": "structRgb",
+      "name": "Rgb",
+      "members": [
+        {
+          "name": "r",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "g",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "b",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "kipr::create::CreatePackets::_3": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__3",
+      "name": "kipr::create::CreatePackets::_3",
+      "members": [
+        {
+          "name": "chargingState",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "voltage",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "current",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "batteryTemperature",
+          "type": "char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "batteryCharge",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        },
+        {
+          "name": "batteryCapacity",
+          "type": "unsigned char",
+          "brief_description": "",
+          "detailed_description": ""
+        }
+      ],
+      "brief_description": "",
+      "detailed_description": "Create OI Packet 3"
+    }
+  },
+  "enumerations": {},
+  "types": {
+    "structkipr_1_1create_1_1CreatePackets_1_1__4": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__4",
+      "type": "structure"
+    },
+    "structrectangle": {
+      "id": "structrectangle",
+      "type": "structure"
+    },
+    "structmutex": {
+      "id": "structmutex",
+      "type": "structure"
+    },
+    "structkipr_1_1create_1_1CreatePackets_1_1__101": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__101",
+      "type": "structure"
+    },
+    "structpoint3": {
+      "id": "structpoint3",
+      "type": "structure"
+    },
+    "structkipr_1_1create_1_1CreatePackets_1_1__5": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__5",
+      "type": "structure"
+    },
+    "structkipr_1_1log_1_1Flush": {
+      "id": "structkipr_1_1log_1_1Flush",
+      "type": "structure"
+    },
+    "structpoint2": {
+      "id": "structpoint2",
+      "type": "structure"
+    },
+    "structstd_1_1hash_3_01kipr_1_1log_1_1Level_01_4": {
+      "id": "structstd_1_1hash_3_01kipr_1_1log_1_1Level_01_4",
+      "type": "structure"
+    },
+    "structkipr_1_1create_1_1CreateState": {
+      "id": "structkipr_1_1create_1_1CreateState",
+      "type": "structure"
+    },
+    "structkipr_1_1log_1_1Location": {
+      "id": "structkipr_1_1log_1_1Location",
+      "type": "structure"
+    },
+    "structkipr_1_1create_1_1CreatePackets_1_1__1": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__1",
+      "type": "structure"
+    },
+    "structthread": {
+      "id": "structthread",
+      "type": "structure"
+    },
+    "structHsv": {
+      "id": "structHsv",
+      "type": "structure"
+    },
+    "structkipr_1_1create_1_1CreatePackets_1_1__2": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__2",
+      "type": "structure"
+    },
+    "structRgb": {
+      "id": "structRgb",
+      "type": "structure"
+    },
+    "structkipr_1_1create_1_1CreatePackets_1_1__3": {
+      "id": "structkipr_1_1create_1_1CreatePackets_1_1__3",
+      "type": "structure"
+    }
+  }
+}

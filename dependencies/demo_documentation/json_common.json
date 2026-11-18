@@ -1,0 +1,491 @@
+{
+  "title": "common",
+  "files": {
+    "analog_8h": {
+      "id": "analog_8h",
+      "name": "analog.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "analog_8hpp": {
+      "id": "analog_8hpp",
+      "name": "analog.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "botball_8h": {
+      "id": "botball_8h",
+      "name": "botball.h",
+      "functions": [
+        "botball_8h_1a27709aff1cbaf8ea25b672afcb8920e9",
+        "botball_8h_1a706027d852569bb8e4887c0919252150"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "button__ids_8hpp": {
+      "id": "button__ids_8hpp",
+      "name": "button_ids.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "button_8h": {
+      "id": "button_8h",
+      "name": "button.h",
+      "functions": [
+        "button_8h_1acb91c985be490a34faa6f213d063eec0"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "button_8hpp": {
+      "id": "button_8hpp",
+      "name": "button.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "color_8hpp": {
+      "id": "color_8hpp",
+      "name": "color.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "colors_8h": {
+      "id": "colors_8h",
+      "name": "colors.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "console_8hpp": {
+      "id": "console_8hpp",
+      "name": "console.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "console_8h": {
+      "id": "console_8h",
+      "name": "console.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "digital_8h": {
+      "id": "digital_8h",
+      "name": "digital.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "digital_8hpp": {
+      "id": "digital_8hpp",
+      "name": "digital.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "display_8h": {
+      "id": "display_8h",
+      "name": "display.h",
+      "functions": [
+        "display_8h_1aee07a233052bd0b8f6e461d21f380d4e",
+        "display_8h_1abbf993d2dc1de781d106a1ca2c8c484d"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "geometry_8h": {
+      "id": "geometry_8h",
+      "name": "geometry.h",
+      "functions": [
+        "geometry_8h_1ac1f6153905cf399f94735ed9e873ad99",
+        "geometry_8h_1a857eaf4c97ea5a11cc8205d88cd97e96",
+        "geometry_8h_1a16565d9e4cf25ba1a8b7efa988169fb3"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "geometry_8hpp": {
+      "id": "geometry_8hpp",
+      "name": "geometry.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "logic_8hpp": {
+      "id": "logic_8hpp",
+      "name": "logic.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "log_8hpp": {
+      "id": "log_8hpp",
+      "name": "log.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "motor_8hpp": {
+      "id": "motor_8hpp",
+      "name": "motor.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "motor_8h": {
+      "id": "motor_8h",
+      "name": "motor.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "sensor_8hpp": {
+      "id": "sensor_8hpp",
+      "name": "sensor.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "servo_8hpp": {
+      "id": "servo_8hpp",
+      "name": "servo.hpp",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "servo_8h": {
+      "id": "servo_8h",
+      "name": "servo.h",
+      "functions": [],
+      "modules": [],
+      "types": []
+    },
+    "time_8h": {
+      "id": "time_8h",
+      "name": "time.h",
+      "functions": [
+        "time_8h_1af0c555a8582de02b428aa7b11735a45d",
+        "time_8h_1a74a833b476f3c37956abf6b4a0fa7989",
+        "time_8h_1a541442824a656f9c820631f4b8adf441"
+      ],
+      "modules": [],
+      "types": []
+    },
+    "wait__for_8h": {
+      "id": "wait__for_8h",
+      "name": "wait_for.h",
+      "functions": [
+        "wait__for_8h_1a74acd89d9a666f725aaa1a476b0e365d",
+        "wait__for_8h_1a368e329006021dadff3cc5a242fa3496",
+        "wait__for_8h_1ae05810376ef3be973a565af8b7470693",
+        "wait__for_8h_1ae196d362dcc42731add42961d3af9c36",
+        "wait__for_8h_1a8385c7f8de3278ffc64481beba49ffbf",
+        "wait__for_8h_1aee3cee1ad54ff82ed8953b7f4ce593a9",
+        "wait__for_8h_1ab8c44ae16043d54ba32460e33137495c",
+        "wait__for_8h_1a8b17289ed8940e950d6accf9347e6542",
+        "wait__for_8h_1a94a83d05c1588cba3b2fa7b80e8f7ad0",
+        "wait__for_8h_1ab1c1b0de9d8cbfd8a7574b367d57f9f1",
+        "wait__for_8h_1af413b9f424f6f55b45805aa161125605",
+        "wait__for_8h_1ac1bc2051b8b966ab9e0d15a6dd6513db",
+        "wait__for_8h_1a868a70fc91aa446f8d719c6d13c5d9f2",
+        "wait__for_8h_1aa02cf2ac3023fcfb71641e45e770d17e",
+        "wait__for_8h_1abc3fd91fb30a4c67f83a8ed29685a843",
+        "wait__for_8h_1a6f2f765b38c4582e9580c3845993148b",
+        "wait__for_8h_1a4df94b781ad03619d46d30dcbf08dd5a"
+      ],
+      "modules": [],
+      "types": []
+    }
+  },
+  "functions": {
+    "group__analog_1gafa28db0c35c02b77341a6bed7aac0cb4": {
+      "id": "group__analog_1gafa28db0c35c02b77341a6bed7aac0cb4",
+      "name": "analog",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "A value between 0 and 5 specifying the sensor to read from."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": "Gets the 12-bit analog value of a port."
+    },
+    "group__digital_1ga3eb7db79d996b92f7063b65dc34b3484": {
+      "id": "group__digital_1ga3eb7db79d996b92f7063b65dc34b3484",
+      "name": "digital",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": null
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "",
+      "detailed_description": ""
+    },
+    "group__motor_1ga5713dda57d3628366a0ee6fd5057400d": {
+      "id": "group__motor_1ga5713dda57d3628366a0ee6fd5057400d",
+      "name": "get_motor_position_counter",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Gets the current motor position.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga4b767e80b3b1723b6720dd016cc1be1b": {
+      "id": "group__motor_1ga4b767e80b3b1723b6720dd016cc1be1b",
+      "name": "gmpc",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Gets the current motor position.",
+      "detailed_description": ""
+    },
+    "group__motor_1gab445096e12260140b6c0afc26d26b325": {
+      "id": "group__motor_1gab445096e12260140b6c0afc26d26b325",
+      "name": "clear_motor_position_counter",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Clears the motor position counter.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga3f000f325222eb01b69844290a654795": {
+      "id": "group__motor_1ga3f000f325222eb01b69844290a654795",
+      "name": "cmpc",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Clears the motor position counter.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga0e71753d12baa58e6093b9afd1e5fd7e": {
+      "id": "group__motor_1ga0e71753d12baa58e6093b9afd1e5fd7e",
+      "name": "move_at_velocity",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "velocity",
+          "type": "int",
+          "description": "The goal velocity in -1500 to 1500 ticks / second"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal velocity in ticks per second.",
+      "detailed_description": "The range is -1500 to 1500, though motor position accuracy may be decreased outside of -1000 to 1000"
+    },
+    "group__motor_1gabd36f01986c363f70d86c7a768ae1348": {
+      "id": "group__motor_1gabd36f01986c363f70d86c7a768ae1348",
+      "name": "mav",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "velocity",
+          "type": "int",
+          "description": "The goal velocity in -1500 to 1500 ticks / second"
+        }
+      ],
+      "return_type": "int",
+      "return_description": null,
+      "brief_description": "Set a goal velocity in ticks per second.",
+      "detailed_description": ""
+    },
+    "group__motor_1ga046127adcac7487b0bbaf0b1ee1d492b": {
+      "id": "group__motor_1ga046127adcac7487b0bbaf0b1ee1d492b",
+      "name": "motor",
+      "parameters": [
+        {
+          "name": "motor",
+          "type": "int",
+          "description": "The motor port."
+        },
+        {
+          "name": "percent",
+          "type": "int",
+          "description": "The percent of the motors velocity, between -100 and 100."
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Moves a motor at a percent velocity.",
+      "detailed_description": ""
+    },
+    "group__motor_1gad6cb702751d048f67025d99608424796": {
+      "id": "group__motor_1gad6cb702751d048f67025d99608424796",
+      "name": "alloff",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Turns all motors off.",
+      "detailed_description": ""
+    },
+    "group__motor_1gae640dbf28bc931da0ff9d2369066c641": {
+      "id": "group__motor_1gae640dbf28bc931da0ff9d2369066c641",
+      "name": "ao",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Turns all motors off.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga74414a627ba987f929cb23de9173b056": {
+      "id": "group__servo_1ga74414a627ba987f929cb23de9173b056",
+      "name": "enable_servo",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port, between 0 and 3, to enable"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Enable a specific servo.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga04ea4f9bce0b434d3cc2f41fcda99c14": {
+      "id": "group__servo_1ga04ea4f9bce0b434d3cc2f41fcda99c14",
+      "name": "disable_servo",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port, between 0 and 3, to disable"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Disable a specific servo.",
+      "detailed_description": ""
+    },
+    "group__servo_1gad82d46ae912a2a0de1f942ce7e10bfbf": {
+      "id": "group__servo_1gad82d46ae912a2a0de1f942ce7e10bfbf",
+      "name": "enable_servos",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Enable all four servo channels.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga93b41914541860f719247c1f14a601ed": {
+      "id": "group__servo_1ga93b41914541860f719247c1f14a601ed",
+      "name": "disable_servos",
+      "parameters": [],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Disable all four servo channels.",
+      "detailed_description": ""
+    },
+    "group__servo_1ga7bd7903bca70212767182ff077b0b89f": {
+      "id": "group__servo_1ga7bd7903bca70212767182ff077b0b89f",
+      "name": "set_servo_position",
+      "parameters": [
+        {
+          "name": "port",
+          "type": "int",
+          "description": "The port of the servo"
+        },
+        {
+          "name": "position",
+          "type": "int",
+          "description": "The new servo position, between 0 and 2047"
+        }
+      ],
+      "return_type": "void",
+      "return_description": null,
+      "brief_description": "Set a new servo goal position.",
+      "detailed_description": ""
+    }
+  },
+  "modules": {
+    "group__analog": {
+      "id": "group__analog",
+      "name": "analog",
+      "functions": [
+        "group__analog_1gafa28db0c35c02b77341a6bed7aac0cb4"
+      ],
+      "types": []
+    },
+    "group__digital": {
+      "id": "group__digital",
+      "name": "digital",
+      "functions": [
+        "group__digital_1ga3eb7db79d996b92f7063b65dc34b3484"
+      ],
+      "types": []
+    },
+    "group__motor": {
+      "id": "group__motor",
+      "name": "motor",
+      "functions": [
+        "group__motor_1ga5713dda57d3628366a0ee6fd5057400d",
+        "group__motor_1ga4b767e80b3b1723b6720dd016cc1be1b",
+        "group__motor_1gab445096e12260140b6c0afc26d26b325",
+        "group__motor_1ga3f000f325222eb01b69844290a654795",
+        "group__motor_1ga0e71753d12baa58e6093b9afd1e5fd7e",
+        "group__motor_1gabd36f01986c363f70d86c7a768ae1348",
+        "group__motor_1ga046127adcac7487b0bbaf0b1ee1d492b",
+        "group__motor_1gad6cb702751d048f67025d99608424796",
+        "group__motor_1gae640dbf28bc931da0ff9d2369066c641"
+      ],
+      "types": []
+    },
+    "group__servo": {
+      "id": "group__servo",
+      "name": "servo",
+      "functions": [
+        "group__servo_1ga74414a627ba987f929cb23de9173b056",
+        "group__servo_1ga04ea4f9bce0b434d3cc2f41fcda99c14",
+        "group__servo_1gad82d46ae912a2a0de1f942ce7e10bfbf",
+        "group__servo_1ga93b41914541860f719247c1f14a601ed",
+        "group__servo_1ga7bd7903bca70212767182ff077b0b89f"
+      ],
+      "types": []
+    }
+  }
+}

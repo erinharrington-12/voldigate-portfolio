@@ -27,6 +27,7 @@ if (dependencies.cpython) modules.push(resolve(dependencies.cpython));
 if (dependencies.ammo) modules.push(resolve(dependencies.ammo));
 
 let libkiprCDocumentation = undefined;
+let libkiprCCCommonDocumentation = undefined;
 if (dependencies.libkipr_c_documentation) {
   console.log(
     'Reading libkipr_c_documentation from',
