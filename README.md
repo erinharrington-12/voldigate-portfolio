@@ -24,7 +24,7 @@ The demo demonstrates both my experience developing a complete robotics IDE and 
 
 ### Graphical Programming
 
-![Blockly Graphical Editor](screenshots/voldigate-blockly.png)
+![Blockly Graphical Editor](screenshots/voldigate-graphical.png)
 
 *The Blockly-based graphical editor for visual programming.*
 
